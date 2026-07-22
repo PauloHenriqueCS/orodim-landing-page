@@ -50,6 +50,11 @@ img{max-width:100%; display:block}
 .btn-ghost:hover{background:rgba(255,255,255,.1); transform:translateY(-2px)}
 .hdr .btn{padding:.6rem 1.1rem}
 .burger{display:none; background:none; border:0; color:var(--white); cursor:pointer}
+.mobile-menu{display:none; flex-direction:column; gap:2px; max-width:var(--wrap); margin:0 auto; padding:4px 24px 22px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--mist); font-weight:600; font-size:1rem; min-height:44px; padding:0 4px; border-radius:8px; display:flex; align-items:center}
+.mobile-menu a:hover{color:var(--white)}
+.mobile-menu .menu-divider{border-top:1px solid var(--line); margin:8px 0}
 
 /* store badges */
 .stores{display:flex; gap:12px; flex-wrap:wrap}
@@ -235,11 +240,22 @@ footer img{height:26px}
     </nav>
     <div style="display:flex;align-items:center;gap:12px">
       <button class="btn btn-primary" onclick="go('#download')">Baixar o app</button>
-      <button class="burger" onclick="go('#recursos')" aria-label="menu">
+      <button class="burger" id="burgerBtn" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu principal (mobile)">
+    <a href="#recursos" onclick="closeMenu()">Recursos</a>
+    <a href="#como" onclick="closeMenu()">Como funciona</a>
+    <a href="#niveis" onclick="closeMenu()">Níveis</a>
+    <a href="#preco" onclick="closeMenu()">Preço</a>
+    <div class="menu-divider"></div>
+    <a href="/privacy">Privacidade</a>
+    <a href="/terms">Termos</a>
+    <a href="/support">Suporte</a>
+    <a href="/account-deletion">Exclusão de conta</a>
+  </nav>
 </header>
 
 <!-- HERO -->
@@ -512,6 +528,16 @@ footer img{height:26px}
 
 <script>
 function go(sel){document.querySelector(sel)?.scrollIntoView({behavior:'smooth'});}
+var burgerBtn=document.getElementById('burgerBtn');
+var mobileMenu=document.getElementById('mobileMenu');
+function toggleMenu(){
+  var open=mobileMenu.classList.toggle('open');
+  burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeMenu(){
+  mobileMenu.classList.remove('open');
+  burgerBtn.setAttribute('aria-expanded','false');
+}
 var hdr=document.getElementById('hdr');
 addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>12);});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});
