@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato | Lemon</title>
+<meta name="description" content="Entre em contato com a Lemon: suporte técnico, conta e acesso, cobrança, privacidade e LGPD, exclusão de conta ou sugestões. Respondemos pelo e-mail que você informar.">
+<link rel="canonical" href="/contact">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contato | Lemon">
+<meta property="og:description" content="Fale com a Lemon sobre suporte, conta, cobrança, privacidade e LGPD, exclusão de conta ou sugestões.">
+<meta property="og:url" content="https://lemonenglish.app/contact">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/legal.css">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="hdr" role="banner">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Página inicial do Lemon">
+      <img src="/assets/logo.png" alt="Lemon" width="240" height="74">
+    </a>
+    <nav class="hdr-nav" aria-label="Ajuda e páginas legais">
+      <a href="/support">Suporte</a>
+      <a href="/contact">Contato</a>
+      <a href="/privacy">Política de Privacidade</a>
+      <a href="/terms">Termos de Uso</a>
+      <a href="/lgpd">Central de Privacidade e LGPD</a>
+      <a href="/account-deletion">Exclusão de conta</a>
+    </nav>
+    <a class="btn btn-ghost" href="/">Voltar ao site</a>
+  </div>
+</header>
+
+<main class="legal-main">
+  <div class="wrap">
+    <nav class="legal-tabs" aria-label="Navegar entre páginas legais">
+      <a href="/support">Suporte</a>
+      <a href="/contact">Contato</a>
+      <a href="/privacy">Política de Privacidade</a>
+      <a href="/terms">Termos de Uso</a>
+      <a href="/lgpd">Central de Privacidade e LGPD</a>
+      <a href="/account-deletion">Exclusão de conta</a>
+    </nav>
+
+    <div class="legal-hero">
+      <h1>Entre em contato com a Lemon</h1>
+      <p class="legal-lead">Preencha o formulário abaixo com o máximo de detalhes possível. Respondemos pelo e-mail que você informar aqui embaixo.</p>
+    </div>
+
+    <article class="legal-article">
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="name" maxlength="120" required aria-describedby="name-error">
+            <p class="field-error" id="name-error"></p>
+          </div>
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="200" required aria-describedby="email-error">
+            <p class="field-error" id="email-error"></p>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="category">Categoria</label>
+          <select id="category" name="category" required aria-describedby="category-error">
+            <option value="" disabled selected>Selecione uma categoria</option>
+            <option value="support">Suporte técnico</option>
+            <option value="account">Conta e acesso</option>
+            <option value="billing">Cobrança e assinatura</option>
+            <option value="privacy">Privacidade e LGPD</option>
+            <option value="deletion">Exclusão de conta</option>
+            <option value="suggestion">Sugestão</option>
+            <option value="other">Outro</option>
+          </select>
+          <p class="field-error" id="category-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Assunto</label>
+          <input type="text" id="subject" name="subject" maxlength="150" required aria-describedby="subject-error">
+          <p class="field-error" id="subject-error"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Mensagem</label>
+          <textarea id="message" name="message" maxlength="5000" required aria-describedby="message-error"></textarea>
+          <p class="hint">Entre 10 e 5000 caracteres.</p>
+          <p class="field-error" id="message-error"></p>
+        </div>
+
+        <div class="form-field hp-field" aria-hidden="true">
+          <label for="company">Não preencha este campo</label>
+          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="form-privacy-note">Os dados enviados serão utilizados para analisar e responder à sua solicitação. Consulte nossa <a class="inline-link" href="/privacy">Política de Privacidade</a>.</p>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Enviar mensagem</button>
+          <span class="hint" id="submittingHint" hidden>Enviando…</span>
+        </div>
+
+        <div class="form-status form-status-success" id="successStatus" role="status" aria-live="polite" tabindex="-1">
+          <h2>Mensagem enviada</h2>
+          <p>Recebemos sua solicitação. A resposta será enviada para o e-mail informado.</p>
+        </div>
+
+        <div class="form-status form-status-error" id="errorStatus" role="alert" aria-live="assertive" tabindex="-1">
+          <h2>Não foi possível enviar sua mensagem</h2>
+          <p id="errorMessage">Ocorreu um erro ao enviar sua mensagem. Tente novamente em instantes.</p>
+          <div class="actions">
+            <button type="button" class="btn btn-ghost" id="retryBtn">Tentar novamente</button>
+            <a class="btn btn-ghost" href="mailto:contato@lemonenglish.app">Enviar por e-mail</a>
+          </div>
+        </div>
+      </form>
+
+    </article>
+  </div>
+</main>
+
+<footer class="lemon-footer">
+  <div class="wrap">
+    <div class="lemon-footer-top">
+      <a class="lemon-footer-brand" href="/" aria-label="Página inicial do Lemon">
+        <img src="/assets/logo.png" alt="Lemon" width="120" height="37">
+      </a>
+
+      <nav class="lemon-footer-group" aria-label="Produto">
+        <p class="foot-group-title">Produto</p>
+        <a href="/#recursos">Recursos</a>
+        <a href="/#como">Como funciona</a>
+        <a href="/#niveis">Níveis</a>
+        <a href="/#preco">Preço</a>
+      </nav>
+
+      <nav class="lemon-footer-group" aria-label="Ajuda">
+        <p class="foot-group-title">Ajuda</p>
+        <a href="/support">Suporte</a>
+        <a href="/contact">Contato</a>
+      </nav>
+
+      <nav class="lemon-footer-group" aria-label="Legal e privacidade">
+        <p class="foot-group-title">Legal e privacidade</p>
+        <a href="/privacy">Política de Privacidade</a>
+        <a href="/terms">Termos de Uso</a>
+        <a href="/lgpd">Central de Privacidade e LGPD</a>
+        <a href="/account-deletion">Exclusão de conta</a>
+        <button type="button" class="foot-link-btn" data-open-privacy-notice>Preferências de cookies</button>
+      </nav>
+    </div>
+
+    <div class="lemon-footer-bottom">
+      <p>© <span data-current-year>2026</span> Lemon · <a href="mailto:contato@lemonenglish.app">contato@lemonenglish.app</a></p>
+      <p>Paulo Henrique Candido Silva · Brasil</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+<script>
+(function () {
+  "use strict";
+
+  var VALID_CATEGORIES = ["support", "account", "billing", "privacy", "deletion", "suggestion", "other"];
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  var form = document.getElementById("contactForm");
+  var submitBtn = document.getElementById("submitBtn");
+  var submittingHint = document.getElementById("submittingHint");
+  var successStatus = document.getElementById("successStatus");
+  var errorStatus = document.getElementById("errorStatus");
+  var errorMessage = document.getElementById("errorMessage");
+  var retryBtn = document.getElementById("retryBtn");
+
+  var fields = {
+    name: document.getElementById("name"),
+    email: document.getElementById("email"),
+    category: document.getElementById("category"),
+    subject: document.getElementById("subject"),
+    message: document.getElementById("message")
+  };
+
+  var isSubmitting = false;
+
+  function preselectCategory() {
+    var params = new URLSearchParams(window.location.search);
+    var category = params.get("category");
+    if (category && VALID_CATEGORIES.indexOf(category) !== -1) {
+      fields.category.value = category;
+    }
+  }
+
+  function setFieldError(name, message) {
+    var field = fields[name];
+    var errorEl = document.getElementById(name + "-error");
+    if (message) {
+      field.setAttribute("aria-invalid", "true");
+      errorEl.textContent = message;
+    } else {
+      field.removeAttribute("aria-invalid");
+      errorEl.textContent = "";
+    }
+  }
+
+  function validateField(name) {
+    var value = fields[name].value.trim();
+    switch (name) {
+      case "name":
+        if (value.length < 2 || value.length > 120) {
+          setFieldError("name", "Informe um nome com 2 a 120 caracteres.");
+          return false;
+        }
+        break;
+      case "email":
+        if (!EMAIL_RE.test(value) || value.length > 200) {
+          setFieldError("email", "Informe um e-mail válido.");
+          return false;
+        }
+        break;
+      case "category":
+        if (VALID_CATEGORIES.indexOf(value) === -1) {
+          setFieldError("category", "Selecione uma categoria.");
+          return false;
+        }
+        break;
+      case "subject":
+        if (value.length < 3 || value.length > 150) {
+          setFieldError("subject", "Informe um assunto com 3 a 150 caracteres.");
+          return false;
+        }
+        break;
+      case "message":
+        if (value.length < 10 || value.length > 5000) {
+          setFieldError("message", "Escreva uma mensagem com 10 a 5000 caracteres.");
+          return false;
+        }
+        break;
+    }
+    setFieldError(name, "");
+    return true;
+  }
+
+  Object.keys(fields).forEach(function (name) {
+    fields[name].addEventListener("blur", function () {
+      validateField(name);
+    });
+  });
+
+  function validateAll() {
+    var valid = true;
+    Object.keys(fields).forEach(function (name) {
+      if (!validateField(name)) valid = false;
+    });
+    return valid;
+  }
+
+  function hideStatuses() {
+    successStatus.classList.remove("is-visible");
+    errorStatus.classList.remove("is-visible");
+  }
+
+  function showSuccess() {
+    hideStatuses();
+    Object.keys(fields).forEach(function (name) {
+      fields[name].disabled = true;
+    });
+    submitBtn.hidden = true;
+    successStatus.classList.add("is-visible");
+    successStatus.focus();
+  }
+
+  function showError(message) {
+    hideStatuses();
+    errorMessage.textContent = message || "Ocorreu um erro ao enviar sua mensagem. Tente novamente em instantes.";
+    errorStatus.classList.add("is-visible");
+    errorStatus.focus();
+  }
+
+  function setSubmitting(submitting) {
+    isSubmitting = submitting;
+    submitBtn.disabled = submitting;
+    submittingHint.hidden = !submitting;
+    submitBtn.setAttribute("aria-busy", submitting ? "true" : "false");
+  }
+
+  retryBtn.addEventListener("click", function () {
+    hideStatuses();
+    submitBtn.focus();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (isSubmitting) return;
+    hideStatuses();
+
+    if (!validateAll()) {
+      var firstInvalid = Object.keys(fields).find(function (name) {
+        return fields[name].getAttribute("aria-invalid") === "true";
+      });
+      if (firstInvalid) fields[firstInvalid].focus();
+      return;
+    }
+
+    var payload = {
+      name: fields.name.value.trim(),
+      email: fields.email.value.trim(),
+      category: fields.category.value,
+      subject: fields.subject.value.trim(),
+      message: fields.message.value.trim(),
+      company: document.getElementById("company").value
+    };
+
+    setSubmitting(true);
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function (result) {
+        setSubmitting(false);
+        if (result.ok) {
+          showSuccess();
+        } else {
+          showError(result.data && result.data.error);
+        }
+      })
+      .catch(function () {
+        setSubmitting(false);
+        showError("Não foi possível conectar ao servidor. Verifique sua internet e tente novamente, ou envie por e-mail.");
+      });
+  });
+
+  preselectCategory();
+})();
+</script>
+</body>
+</html>

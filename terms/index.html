@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termos de Uso do Lemon</title>
+<title>Termos de Uso | Lemon</title>
 <meta name="description" content="Termos de Uso do Lemon: cadastro e segurança da conta, uso permitido, conteúdo enviado, inteligência artificial, assinaturas e cancelamento, e demais regras de uso do aplicativo.">
 <link rel="canonical" href="/terms">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Termos de Uso | Lemon">
+<meta property="og:description" content="Cadastro e segurança da conta, uso permitido, conteúdo enviado, inteligência artificial, assinaturas e cancelamento, e demais regras de uso do aplicativo.">
+<meta property="og:url" content="https://lemonenglish.app/terms">
+<meta property="og:locale" content="pt_BR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/legal.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
@@ -18,10 +24,12 @@
     <a class="brand" href="/" aria-label="Página inicial do Lemon">
       <img src="/assets/logo.png" alt="Lemon" width="240" height="74">
     </a>
-    <nav class="hdr-nav" aria-label="Páginas legais">
-      <a href="/privacy">Privacidade</a>
-      <a href="/terms" aria-current="page">Termos</a>
+    <nav class="hdr-nav" aria-label="Ajuda e páginas legais">
       <a href="/support">Suporte</a>
+      <a href="/contact">Contato</a>
+      <a href="/privacy">Política de Privacidade</a>
+      <a href="/terms">Termos de Uso</a>
+      <a href="/lgpd">Central de Privacidade e LGPD</a>
       <a href="/account-deletion">Exclusão de conta</a>
     </nav>
     <a class="btn btn-ghost" href="/">Voltar ao site</a>
@@ -31,9 +39,11 @@
 <main class="legal-main">
   <div class="wrap">
     <nav class="legal-tabs" aria-label="Navegar entre páginas legais">
-      <a href="/privacy">Política de Privacidade</a>
-      <a href="/terms" aria-current="page">Termos de Uso</a>
       <a href="/support">Suporte</a>
+      <a href="/contact">Contato</a>
+      <a href="/privacy">Política de Privacidade</a>
+      <a href="/terms">Termos de Uso</a>
+      <a href="/lgpd">Central de Privacidade e LGPD</a>
       <a href="/account-deletion">Exclusão de conta</a>
     </nav>
 
@@ -127,20 +137,44 @@
   </div>
 </main>
 
-<footer class="site-footer">
+<footer class="lemon-footer">
   <div class="wrap">
-    <a href="/" aria-label="Página inicial do Lemon">
-      <img src="/assets/logo.png" alt="Lemon" width="240" height="74">
-    </a>
-    <nav class="foot-links" aria-label="Links legais">
-      <a href="/privacy">Privacidade</a>
-      <a href="/terms">Termos</a>
-      <a href="/support">Suporte</a>
-      <a href="/account-deletion">Exclusão de conta</a>
-    </nav>
-    <span class="foot-cr">© 2026 Lemon · Paulo Henrique Candido Silva</span>
+    <div class="lemon-footer-top">
+      <a class="lemon-footer-brand" href="/" aria-label="Página inicial do Lemon">
+        <img src="/assets/logo.png" alt="Lemon" width="120" height="37">
+      </a>
+
+      <nav class="lemon-footer-group" aria-label="Produto">
+        <p class="foot-group-title">Produto</p>
+        <a href="/#recursos">Recursos</a>
+        <a href="/#como">Como funciona</a>
+        <a href="/#niveis">Níveis</a>
+        <a href="/#preco">Preço</a>
+      </nav>
+
+      <nav class="lemon-footer-group" aria-label="Ajuda">
+        <p class="foot-group-title">Ajuda</p>
+        <a href="/support">Suporte</a>
+        <a href="/contact">Contato</a>
+      </nav>
+
+      <nav class="lemon-footer-group" aria-label="Legal e privacidade">
+        <p class="foot-group-title">Legal e privacidade</p>
+        <a href="/privacy">Política de Privacidade</a>
+        <a href="/terms">Termos de Uso</a>
+        <a href="/lgpd">Central de Privacidade e LGPD</a>
+        <a href="/account-deletion">Exclusão de conta</a>
+        <button type="button" class="foot-link-btn" data-open-privacy-notice>Preferências de cookies</button>
+      </nav>
+    </div>
+
+    <div class="lemon-footer-bottom">
+      <p>© <span data-current-year>2026</span> Lemon · <a href="mailto:contato@lemonenglish.app">contato@lemonenglish.app</a></p>
+      <p>Paulo Henrique Candido Silva · Brasil</p>
+    </div>
   </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

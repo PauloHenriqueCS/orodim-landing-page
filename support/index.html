@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suporte do Lemon</title>
-<meta name="description" content="Central de suporte do Lemon: como entrar em contato por e-mail e orientações para resolver problemas comuns de login, permissão de microfone e progresso não atualizado.">
+<title>Suporte | Lemon</title>
+<meta name="description" content="Central de suporte do Lemon: como entrar em contato e orientações para resolver problemas comuns de login, permissão de microfone e progresso não atualizado.">
 <link rel="canonical" href="/support">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Suporte | Lemon">
+<meta property="og:description" content="Como entrar em contato com o Lemon e orientações para resolver problemas comuns de login, permissão de microfone e progresso não atualizado.">
+<meta property="og:url" content="https://lemonenglish.app/support">
+<meta property="og:locale" content="pt_BR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/legal.css">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
@@ -18,10 +24,12 @@
     <a class="brand" href="/" aria-label="Página inicial do Lemon">
       <img src="/assets/logo.png" alt="Lemon" width="240" height="74">
     </a>
-    <nav class="hdr-nav" aria-label="Páginas legais">
-      <a href="/privacy">Privacidade</a>
-      <a href="/terms">Termos</a>
-      <a href="/support" aria-current="page">Suporte</a>
+    <nav class="hdr-nav" aria-label="Ajuda e páginas legais">
+      <a href="/support">Suporte</a>
+      <a href="/contact">Contato</a>
+      <a href="/privacy">Política de Privacidade</a>
+      <a href="/terms">Termos de Uso</a>
+      <a href="/lgpd">Central de Privacidade e LGPD</a>
       <a href="/account-deletion">Exclusão de conta</a>
     </nav>
     <a class="btn btn-ghost" href="/">Voltar ao site</a>
@@ -31,9 +39,11 @@
 <main class="legal-main">
   <div class="wrap">
     <nav class="legal-tabs" aria-label="Navegar entre páginas legais">
+      <a href="/support">Suporte</a>
+      <a href="/contact">Contato</a>
       <a href="/privacy">Política de Privacidade</a>
       <a href="/terms">Termos de Uso</a>
-      <a href="/support" aria-current="page">Suporte</a>
+      <a href="/lgpd">Central de Privacidade e LGPD</a>
       <a href="/account-deletion">Exclusão de conta</a>
     </nav>
 
@@ -45,10 +55,14 @@
     <article class="legal-article">
 
       <h2 id="contato">Entrar em contato</h2>
-      <p>O suporte do Lemon é feito por e-mail. Escreva contando o que está acontecendo e responderemos assim que possível.</p>
+      <p>Conte o que está acontecendo pela nossa página de contato ou diretamente por e-mail — responderemos assim que possível.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/contact">Abrir página de contato</a>
+        <a class="btn btn-ghost" href="mailto:contato@lemonenglish.app?subject=Suporte%20Lemon">Enviar e-mail diretamente</a>
+      </div>
       <div class="contact-card">
         <span class="email">contato@lemonenglish.app</span>
-        <a class="btn btn-primary" href="mailto:contato@lemonenglish.app?subject=Suporte%20Lemon">Entrar em contato</a>
+        <a class="btn btn-primary" href="mailto:contato@lemonenglish.app?subject=Suporte%20Lemon">contato@lemonenglish.app</a>
       </div>
 
       <h2 id="como-descrever">Como descrever o seu problema</h2>
@@ -96,6 +110,7 @@
       <ul>
         <li><a class="inline-link" href="/privacy">Política de Privacidade</a></li>
         <li><a class="inline-link" href="/terms">Termos de Uso</a></li>
+        <li><a class="inline-link" href="/lgpd">Central de Privacidade e LGPD</a></li>
         <li><a class="inline-link" href="/account-deletion">Exclusão de conta e dados</a></li>
       </ul>
 
@@ -103,20 +118,44 @@
   </div>
 </main>
 
-<footer class="site-footer">
+<footer class="lemon-footer">
   <div class="wrap">
-    <a href="/" aria-label="Página inicial do Lemon">
-      <img src="/assets/logo.png" alt="Lemon" width="240" height="74">
-    </a>
-    <nav class="foot-links" aria-label="Links legais">
-      <a href="/privacy">Privacidade</a>
-      <a href="/terms">Termos</a>
-      <a href="/support">Suporte</a>
-      <a href="/account-deletion">Exclusão de conta</a>
-    </nav>
-    <span class="foot-cr">© 2026 Lemon · Paulo Henrique Candido Silva</span>
+    <div class="lemon-footer-top">
+      <a class="lemon-footer-brand" href="/" aria-label="Página inicial do Lemon">
+        <img src="/assets/logo.png" alt="Lemon" width="120" height="37">
+      </a>
+
+      <nav class="lemon-footer-group" aria-label="Produto">
+        <p class="foot-group-title">Produto</p>
+        <a href="/#recursos">Recursos</a>
+        <a href="/#como">Como funciona</a>
+        <a href="/#niveis">Níveis</a>
+        <a href="/#preco">Preço</a>
+      </nav>
+
+      <nav class="lemon-footer-group" aria-label="Ajuda">
+        <p class="foot-group-title">Ajuda</p>
+        <a href="/support">Suporte</a>
+        <a href="/contact">Contato</a>
+      </nav>
+
+      <nav class="lemon-footer-group" aria-label="Legal e privacidade">
+        <p class="foot-group-title">Legal e privacidade</p>
+        <a href="/privacy">Política de Privacidade</a>
+        <a href="/terms">Termos de Uso</a>
+        <a href="/lgpd">Central de Privacidade e LGPD</a>
+        <a href="/account-deletion">Exclusão de conta</a>
+        <button type="button" class="foot-link-btn" data-open-privacy-notice>Preferências de cookies</button>
+      </nav>
+    </div>
+
+    <div class="lemon-footer-bottom">
+      <p>© <span data-current-year>2026</span> Lemon · <a href="mailto:contato@lemonenglish.app">contato@lemonenglish.app</a></p>
+      <p>Paulo Henrique Candido Silva · Brasil</p>
+    </div>
   </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
