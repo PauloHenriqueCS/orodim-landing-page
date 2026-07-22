@@ -5,11 +5,11 @@
 // RESEND_API_KEY never reaches the browser and the recipient can't be
 // changed from the client.
 //
-// Requires the RESEND_API_KEY environment variable and a sending domain
-// verified in Resend for the FROM address below (see /.env.example).
+// Requires the RESEND_API_KEY environment variable. The FROM address below
+// uses the auth.lemonenglish.app sending domain, already verified in Resend.
 
 const RECIPIENT = "contato@lemonenglish.app";
-const FROM = "Lemon Site <no-reply@lemonenglish.app>";
+const FROM = "Lemon <noreply@auth.lemonenglish.app>";
 
 const CATEGORIES = {
   support: "Suporte técnico",
