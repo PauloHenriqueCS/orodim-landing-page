@@ -1,15 +1,15 @@
 // POST /api/contact
 //
-// Sends the public contact form to contato@lemonenglish.app via the Resend
+// Sends the public contact form to contato@orodim.com.br via the Resend
 // HTTP API. Runs server-side only (Vercel Serverless Function) so the
 // RESEND_API_KEY never reaches the browser and the recipient can't be
 // changed from the client.
 //
 // Requires the RESEND_API_KEY environment variable. The FROM address below
-// uses the auth.lemonenglish.app sending domain, already verified in Resend.
+// uses the auth.orodim.com.br sending domain, already verified in Resend.
 
-const RECIPIENT = "contato@lemonenglish.app";
-const FROM = "Orodim <noreply@auth.lemonenglish.app>";
+const RECIPIENT = "contato@orodim.com.br";
+const FROM = "Orodim <noreply@auth.orodim.com.br>";
 
 const CATEGORIES = {
   support: "Suporte técnico",
