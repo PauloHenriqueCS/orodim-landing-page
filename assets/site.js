@@ -146,7 +146,7 @@
       el.setAttribute("aria-label", "Aviso de privacidade e cookies");
       el.innerHTML =
         '<div class="wrap privacy-notice-inner">' +
-          '<p><strong>Privacidade e cookies.</strong> Utilizamos tecnologias essenciais para manter o Lemon funcionando, proteger sua conta e salvar suas preferências. Consulte nossa Política de Privacidade para saber mais.</p>' +
+          '<p><strong>Privacidade e cookies.</strong> Utilizamos tecnologias essenciais para manter o Orodim funcionando, proteger sua conta e salvar suas preferências. Consulte nossa Política de Privacidade para saber mais.</p>' +
           '<div class="privacy-notice-actions">' +
             '<a class="btn btn-ghost" href="/privacy">Política de Privacidade</a>' +
             '<button type="button" class="btn btn-primary" data-privacy-notice-ack>Entendi</button>' +

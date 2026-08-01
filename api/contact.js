@@ -9,7 +9,7 @@
 // uses the auth.lemonenglish.app sending domain, already verified in Resend.
 
 const RECIPIENT = "contato@lemonenglish.app";
-const FROM = "Lemon <noreply@auth.lemonenglish.app>";
+const FROM = "Orodim <noreply@auth.lemonenglish.app>";
 
 const CATEGORIES = {
   support: "Suporte técnico",
@@ -190,7 +190,7 @@ module.exports = async function handler(req, res) {
         from: FROM,
         to: [RECIPIENT],
         reply_to: values.email,
-        subject: `[Lemon · ${categoryLabel}] ${values.subject}`,
+        subject: `[Orodim · ${categoryLabel}] ${values.subject}`,
         text: textBody,
         html: htmlBody
       })
