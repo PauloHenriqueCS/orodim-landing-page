@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orodim — sua professora de inglês com IA</title>
-<meta name="description" content="Escreva, fale, escute e evolua. Uma professora de inglês com IA que monta missões sobre os assuntos que você gosta e acompanha seu progresso todo dia.">
-<link rel="canonical" href="https://lemonenglish.app/">
+<title>Orodim — aprenda inglês com IA: escrita, pronúncia, listening e conversação</title>
+<meta name="description" content="Aprenda inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível e aos assuntos que você gosta — com progressão real do A1 ao C2.">
+<link rel="canonical" href="https://www.orodim.com.br/">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -13,23 +13,23 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Orodim">
 <meta property="og:title" content="Orodim — sua professora de inglês com IA">
-<meta property="og:description" content="Escreva, fale, escute e evolua. Uma professora de inglês com IA que monta missões sobre os assuntos que você gosta e acompanha seu progresso todo dia.">
-<meta property="og:url" content="https://lemonenglish.app/">
+<meta property="og:description" content="Aprenda inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível e aos assuntos que você gosta — com progressão real do A1 ao C2.">
+<meta property="og:url" content="https://www.orodim.com.br/">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:image" content="https://lemonenglish.app/assets/logo.png">
+<meta property="og:image" content="https://www.orodim.com.br/assets/logo.png">
 <meta property="og:image:width" content="240">
 <meta property="og:image:height" content="74">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Orodim — sua professora de inglês com IA">
-<meta name="twitter:description" content="Escreva, fale, escute e evolua. Uma professora de inglês com IA que monta missões sobre os assuntos que você gosta e acompanha seu progresso todo dia.">
-<meta name="twitter:image" content="https://lemonenglish.app/assets/logo.png">
+<meta name="twitter:description" content="Aprenda inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível e aos assuntos que você gosta — com progressão real do A1 ao C2.">
+<meta name="twitter:image" content="https://www.orodim.com.br/assets/logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Orodim",
-  "url": "https://lemonenglish.app/",
-  "logo": "https://lemonenglish.app/assets/logo.png",
+  "url": "https://www.orodim.com.br/",
+  "logo": "https://www.orodim.com.br/assets/logo.png",
   "description": "Aplicativo de ensino de inglês com IA que monta missões personalizadas e acompanha o progresso do aluno todo dia."
 }
 </script>
@@ -94,6 +94,11 @@ img{max-width:100%; display:block}
 .store span{display:flex; flex-direction:column; line-height:1.12}
 .store small{font-size:.66rem; color:var(--mist); letter-spacing:.02em}
 .store b{font-size:1.02rem; font-weight:700; letter-spacing:-.01em}
+/* store badge "coming soon" state — visible, premium, but not a functional link */
+.store--soon{position:relative; cursor:default; padding-right:1.05rem}
+.store--soon:hover{transform:none; border-color:var(--line-2); background:var(--ink-3)}
+.store-soon-tag{position:absolute; top:-9px; right:10px; font-size:.6rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--ink); background:var(--grad); padding:2px 8px; border-radius:999px; line-height:1.4}
+.trial-line strong{font-weight:800}
 
 /* hero */
 .hero{padding:74px 0 40px; position:relative}
@@ -134,14 +139,6 @@ section{position:relative}
 .sec-head.center{margin-left:auto; margin-right:auto; text-align:center}
 .sec-head h2{font-family:var(--display); font-weight:600; font-size:clamp(2rem,4vw,2.9rem); line-height:1.08; letter-spacing:-.02em; margin:16px 0 14px}
 .sec-head p{color:var(--mist); font-size:1.08rem}
-
-/* personalization highlight strip */
-.perso{background:linear-gradient(120deg,rgba(63,185,138,.12),rgba(59,130,246,.1)); border:1px solid var(--line); border-radius:20px; padding:28px 30px; display:flex; gap:22px; align-items:center; margin-top:26px}
-.perso .pico{flex:0 0 auto; width:52px; height:52px; border-radius:14px; display:grid; place-items:center; background:var(--grad); color:#0A1119}
-.perso p{font-size:1.02rem; color:var(--white)}
-.perso p b{font-weight:700}
-.chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
-.chip{font-size:.82rem; font-weight:600; color:var(--white); background:rgba(255,255,255,.06); border:1px solid var(--line-2); border-radius:100px; padding:.28rem .72rem}
 
 /* feature grid */
 .grid6{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
@@ -189,8 +186,24 @@ section{position:relative}
 .path.on .node .bead{border-color:var(--green); box-shadow:0 0 0 5px rgba(63,185,138,.16)}
 .node b{font-family:var(--display); font-weight:600; font-size:1.25rem}
 .node span{font-size:.76rem; color:var(--mist)}
-.levels-note{max-width:560px; margin:44px auto 0; text-align:center; color:var(--mist); font-size:1rem}
+.levels-head p{max-width:640px; margin-left:auto; margin-right:auto}
+.levels-head .grad-text{font-weight:700}
+.levels-note{max-width:620px; margin:44px auto 0; text-align:center; color:var(--mist); font-size:1.02rem}
 .levels-note b{color:var(--white); font-weight:600}
+/* six CEFR levels (A1 → C2): keep labels legible on tablet/mobile.
+   Flex items default to min-width:auto (as wide as their longest word), so long
+   single-word labels would push the row past the viewport — pin the width and let
+   the words wrap/break inside each node instead. */
+@media(max-width:640px){
+  .path{max-width:100%; padding:0}
+  .node{width:48px; min-width:0; gap:12px}
+  .node b{font-size:1.06rem}
+  .node span{font-size:.63rem; line-height:1.16; overflow-wrap:break-word; hyphens:auto}
+}
+@media(max-width:380px){
+  .node{width:42px}
+  .node span{font-size:.58rem}
+}
 
 /* pricing */
 .plans-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:28px; max-width:940px; margin:0 auto; align-items:stretch}
@@ -212,6 +225,8 @@ section{position:relative}
 .price-card .stores{justify-content:center}
 .price-fine{margin-top:18px; font-size:.82rem; color:var(--mist-2)}
 .price-fine.center{text-align:center}
+.trial-badge{display:flex; align-items:center; justify-content:center; gap:.5rem; width:max-content; max-width:100%; margin:0 auto 30px; font-size:.9rem; font-weight:600; color:var(--white); background:rgba(63,185,138,.1); border:1px solid rgba(63,185,138,.28); border-radius:100px; padding:.5rem 1.05rem}
+.trial-badge .dot{width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 0 4px rgba(63,185,138,.2); flex:0 0 auto}
 
 /* final cta */
 .cta-band{padding:96px 0}
@@ -236,7 +251,6 @@ section{position:relative}
   .dive.flip .dive-txt{order:0}
   .dive-shot{order:2}
   .grid6{grid-template-columns:1fr 1fr}
-  .perso{flex-direction:column; align-items:flex-start}
   .plans-grid{grid-template-columns:1fr; max-width:460px}
 }
 @media(max-width:680px){
@@ -314,16 +328,16 @@ section{position:relative}
     <div class="hero-txt rv">
       <span class="hero-badge"><span class="dot"></span>Sua professora de inglês com IA</span>
       <h1>Escreva, fale,<br>escute e <em class="grad-text">evolua.</em></h1>
-      <p class="lead">Uma professora de inglês com IA que monta missões sobre os assuntos que <strong>você</strong> gosta e acompanha seu progresso todo dia.</p>
+      <p class="lead">Aprenda inglês praticando escrita, pronúncia, listening e conversação com uma IA que adapta as atividades ao seu nível e aos assuntos que <strong>você</strong> gosta.</p>
       <div class="stores">
-        <a class="store" href="#" title="Em breve na App Store" aria-label="Baixar na App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg><span><small>Baixar na</small><b>App Store</b></span></a>
-        <a class="store" href="#" title="Em breve no Google Play" aria-label="Disponível no Google Play"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg><span><small>Disponível no</small><b>Google Play</b></span></a>
+        <!-- App Store: badge em estado "em breve" (sem navegacao). Para publicar: trocar o elemento span.store.store--soon por um link (a.store com href real da App Store) e ajustar os textos small/b. --><span class="store store--soon" role="img" aria-label="App Store — disponível em breve"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg><span><small>Em breve na</small><b>App Store</b></span><span class="store-soon-tag">Em breve</span></span>
+        <!-- Google Play: badge em estado "em breve" (sem navegacao). Para publicar: trocar o elemento span.store.store--soon por um link (a.store com href real do Google Play) e ajustar os textos small/b. --><span class="store store--soon" role="img" aria-label="Google Play — disponível em breve"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg><span><small>Em breve no</small><b>Google Play</b></span><span class="store-soon-tag">Em breve</span></span>
       </div>
-      <p class="hero-alt">Sem plano anual · <a href="#como" onclick="go('#como');return false;">veja como funciona</a></p>
+      <p class="hero-alt trial-line"><strong class="grad-text">7 dias grátis</strong> · sem plano anual · cancele quando quiser</p>
       <div class="hero-note">
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Temas do seu interesse</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Missão nova todo dia</span>
-        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Do A1 ao C1</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Do A1 ao C2</span>
       </div>
     </div>
     <div class="phones rv">
@@ -380,18 +394,7 @@ section{position:relative}
       <div class="card rv">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
         <h3>Evolução de verdade</h3>
-        <p>Gráficos, notas, tempo de prática, consistência e a sua progressão real do A1 ao C1.</p>
-      </div>
-    </div>
-
-    <div class="perso rv">
-      <div class="pico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2l2.4 5.4L20 8l-4 4 1 6-5-3-5 3 1-6-4-4 5.6-.6L12 2z"/></svg></div>
-      <div>
-        <p><b>Cada missão é sobre o que você curte.</b> Você diz o que gosta e a Orodim gera os textos, as conversas e o listening a partir disso. Aprender inglês falando de futebol rende bem mais do que decorar frase solta.</p>
-        <div class="chips">
-          <span class="chip">Futebol</span><span class="chip">Viagem</span><span class="chip">Séries</span>
-          <span class="chip">Trabalho</span><span class="chip">Games</span><span class="chip">Música</span><span class="chip">o que você quiser</span>
-        </div>
+        <p>Gráficos, notas, tempo de prática, consistência e a sua progressão real do A1 ao C2.</p>
       </div>
     </div>
   </div>
@@ -497,10 +500,10 @@ section{position:relative}
 <!-- LEVELS -->
 <section class="sec levels" id="niveis">
   <div class="wrap">
-    <div class="sec-head center rv">
+    <div class="sec-head center rv levels-head">
       <span class="eyebrow">Progressão CEFR</span>
-      <h2>Do A1 ao C1, no seu ritmo</h2>
-      <p>Você sobe de nível por domínio real — não por quantidade de atividade. Um erro isolado não te faz perder nível.</p>
+      <h2>Do zero ao C2.<br>Evolução real, nível por nível.</h2>
+      <p>No Orodim, você não sobe por quantidade de atividades. Você avança quando demonstra <b class="grad-text">domínio de verdade</b> em escrita, vocabulário, pronúncia, listening e conversa.</p>
     </div>
     <div class="path rv" id="path">
       <div class="path-line"><div class="path-fill"></div></div>
@@ -508,11 +511,12 @@ section{position:relative}
         <div class="node"><div class="bead"></div><b>A1</b><span>Começo</span></div>
         <div class="node"><div class="bead"></div><b>A2</b><span>Básico</span></div>
         <div class="node"><div class="bead"></div><b>B1</b><span>Intermediário</span></div>
-        <div class="node"><div class="bead"></div><b>B2</b><span>Avançado</span></div>
-        <div class="node"><div class="bead"></div><b>C1</b><span>Fluente</span></div>
+        <div class="node"><div class="bead"></div><b>B2</b><span>Independente</span></div>
+        <div class="node"><div class="bead"></div><b>C1</b><span>Avançado</span></div>
+        <div class="node"><div class="bead"></div><b>C2</b><span>Proficiência</span></div>
       </div>
     </div>
-    <p class="levels-note rv">A Orodim avalia <b>precisão, consistência e uso em contextos diferentes</b> antes de te promover. Escrita, vocabulário, pronúncia e conversa evoluem separadamente — cada um no seu tempo.</p>
+    <p class="levels-note rv">Sua evolução é construída com <b>precisão, consistência e uso em contextos diferentes</b>. Cada habilidade amadurece no seu tempo — e o Orodim acompanha esse progresso com critérios reais, até o C2.</p>
   </div>
 </section>
 
@@ -522,8 +526,9 @@ section{position:relative}
     <div class="sec-head center rv">
       <span class="eyebrow">Preço</span>
       <h2>Escolha o plano ideal pra sua rotina</h2>
-      <p>Sem plano anual, sem pegadinha. Você paga mês a mês e cancela quando quiser.</p>
+      <p>Comece com <b>7 dias grátis</b>. Sem plano anual, sem pegadinha — você paga mês a mês e cancela quando quiser.</p>
     </div>
+    <p class="trial-badge rv"><span class="dot"></span>7 dias grátis para experimentar · cancele quando quiser</p>
     <div class="plans-grid">
       <div class="price-card rv">
         <span class="price-highlight" style="visibility:hidden" aria-hidden="true">Plano mais completo</span>
@@ -559,8 +564,8 @@ section{position:relative}
     <p class="price-fine center rv">Cobrança mensal · cancele quando quiser</p>
     <p class="price-fine center rv">Escolha e assine seu plano diretamente pelo aplicativo Orodim.</p>
     <div class="stores center rv" id="download">
-      <a class="store" href="#" title="Em breve na App Store" aria-label="Baixar na App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg><span><small>Baixar na</small><b>App Store</b></span></a>
-      <a class="store" href="#" title="Em breve no Google Play" aria-label="Disponível no Google Play"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg><span><small>Disponível no</small><b>Google Play</b></span></a>
+      <!-- App Store: badge em estado "em breve" (sem navegacao). Para publicar: trocar o elemento span.store.store--soon por um link (a.store com href real da App Store) e ajustar os textos small/b. --><span class="store store--soon" role="img" aria-label="App Store — disponível em breve"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg><span><small>Em breve na</small><b>App Store</b></span><span class="store-soon-tag">Em breve</span></span>
+      <!-- Google Play: badge em estado "em breve" (sem navegacao). Para publicar: trocar o elemento span.store.store--soon por um link (a.store com href real do Google Play) e ajustar os textos small/b. --><span class="store store--soon" role="img" aria-label="Google Play — disponível em breve"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg><span><small>Em breve no</small><b>Google Play</b></span><span class="store-soon-tag">Em breve</span></span>
     </div>
   </div>
 </section>
@@ -572,8 +577,8 @@ section{position:relative}
       <h2>Bora falar inglês de verdade?</h2>
       <p>Baixe a Orodim e comece hoje uma missão sobre o que você curte.</p>
       <div class="stores center">
-        <a class="store" href="#" title="Em breve na App Store" aria-label="Baixar na App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg><span><small>Baixar na</small><b>App Store</b></span></a>
-        <a class="store" href="#" title="Em breve no Google Play" aria-label="Disponível no Google Play"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg><span><small>Disponível no</small><b>Google Play</b></span></a>
+        <!-- App Store: badge em estado "em breve" (sem navegacao). Para publicar: trocar o elemento span.store.store--soon por um link (a.store com href real da App Store) e ajustar os textos small/b. --><span class="store store--soon" role="img" aria-label="App Store — disponível em breve"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg><span><small>Em breve na</small><b>App Store</b></span><span class="store-soon-tag">Em breve</span></span>
+        <!-- Google Play: badge em estado "em breve" (sem navegacao). Para publicar: trocar o elemento span.store.store--soon por um link (a.store com href real do Google Play) e ajustar os textos small/b. --><span class="store store--soon" role="img" aria-label="Google Play — disponível em breve"><svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg><span><small>Em breve no</small><b>Google Play</b></span><span class="store-soon-tag">Em breve</span></span>
       </div>
     </div>
   </div>
