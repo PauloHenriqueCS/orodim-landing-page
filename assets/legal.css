@@ -1,4 +1,4 @@
-/* Shared layout for Lemon's public legal/support pages (/privacy, /terms, /support, /account-deletion).
+/* Shared layout for Orodim's public legal/support pages (/privacy, /terms, /support, /account-deletion).
    Reuses the color tokens, fonts and component look of index.html so the pages read as one product. */
 :root{
   --ink:#0A1119; --ink-2:#0F1A26; --ink-3:#15222F; --ink-4:#1B2B3A;

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://lemonenglish.app/sitemap.xml
+Sitemap: https://www.orodim.com.br/sitemap.xml

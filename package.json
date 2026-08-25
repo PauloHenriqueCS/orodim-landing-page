@@ -1,8 +1,8 @@
 {
-  "name": "lemon-landing-page",
+  "name": "orodim-landing-page",
   "private": true,
   "version": "1.0.0",
-  "description": "Lemon public marketing site, legal pages and the /api/contact serverless function.",
+  "description": "Orodim public marketing site, legal pages and the /api/contact serverless function.",
   "engines": {
     "node": ">=18"
   }

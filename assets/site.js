@@ -1,4 +1,4 @@
-/* Shared behaviour for Lemon's public pages: current-page/year helpers, the
+/* Shared behaviour for Orodim's public pages: current-page/year helpers, the
    desktop "Ajuda e Legal" dropdown, and the privacy/cookies notice.
    Loaded by index.html and every /privacy, /terms, /support, /account-deletion,
    /contact and /lgpd page so all of them share one implementation instead of
