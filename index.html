@@ -267,11 +267,20 @@ main{padding-top:59px}
 .cta-store-note{margin-top:20px; font-size:.86rem; color:var(--mist)}
 .cta-phone{margin:64px auto 0; max-width:280px}
 
+/* ---------- scroll reveal ---------- */
+.reveal-on .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); transition-delay:var(--reveal-d,0s); will-change:opacity,transform}
+.reveal-on .reveal--left{transform:translateX(-36px)}
+.reveal-on .reveal--right{transform:translateX(36px)}
+.reveal-on .reveal--scale{transform:translateY(28px) scale(.96)}
+.reveal-on .reveal.is-in{opacity:1; transform:none}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important; scroll-behavior:auto!important}
   .stage-body,.path-fill{transition:none!important}
+  .reveal-on .reveal{opacity:1!important; transform:none!important; transition:none!important}
 }
 </style>
+<script>document.documentElement.classList.add('reveal-on');</script>
 </head>
 <body>
 
@@ -311,16 +320,16 @@ main{padding-top:59px}
   <!-- HERO -->
   <section class="section hero">
     <div class="section-inner">
-      <span class="mono mono--green">Orodim · inglês com IA</span>
-      <h1>Seu inglês em prática. Seu progresso à vista.</h1>
-      <p class="hero-lead">Escrita, pronúncia, listening e conversação com feedback por IA, revisão dos seus erros e evolução acompanhada do A1 ao C2.</p>
+      <span class="mono mono--green reveal">Orodim · inglês com IA</span>
+      <h1 class="reveal" style="--reveal-d:.08s">Seu inglês em prática. Seu progresso à vista.</h1>
+      <p class="hero-lead reveal" style="--reveal-d:.16s">Escrita, pronúncia, listening e conversação com feedback por IA, revisão dos seus erros e evolução acompanhada do A1 ao C2.</p>
 
       <div class="flank flank--hero">
-        <div class="col-left">
+        <div class="col-left reveal reveal--left" style="--reveal-d:.24s">
           <div class="note note--left"><span class="note-num-m">01</span><div class="note-body"><span class="note-num-d">01</span><p>Escolha o que praticar hoje.</p></div><span class="note-line"></span></div>
           <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p>Continue do ponto certo do seu nível.</p></div><span class="note-line"></span></div>
         </div>
-        <div class="col-phone">
+        <div class="col-phone reveal reveal--scale" style="--reveal-d:.12s">
           <figure class="phone">
             <div class="phone-shell"><div class="phone-screen">
               <img src="/assets/img/home.png" alt="Tela inicial do Orodim com as práticas disponíveis" width="1190" height="2576" fetchpriority="high" decoding="async">
@@ -328,13 +337,13 @@ main{padding-top:59px}
             </div></div>
           </figure>
         </div>
-        <div class="col-right">
+        <div class="col-right reveal reveal--right" style="--reveal-d:.24s">
           <div class="note note--right"><span class="note-line"></span><span class="note-num-m">03</span><div class="note-body"><span class="note-num-d">03</span><p>Acompanhe sua sequência de estudos.</p></div></div>
           <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p>Veja sua próxima prática recomendada.</p></div></div>
         </div>
       </div>
 
-      <div class="hero-actions">
+      <div class="hero-actions reveal" style="--reveal-d:.12s">
         <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">sem plano anual · cancele quando quiser</span></p>
         <div class="stores center" id="storesHero"></div>
       </div>
@@ -344,11 +353,11 @@ main{padding-top:59px}
   <!-- STAGE / VIEWER -->
   <section class="section" id="recursos">
     <div class="section-inner" style="max-width:1180px">
-      <div class="stage-head">
+      <div class="stage-head reveal">
         <h2>Veja o Orodim em ação</h2>
         <p>Escolha uma prática e explore como ela funciona.</p>
       </div>
-      <div class="tabs" id="tabs" role="tablist" aria-label="Práticas do Orodim"></div>
+      <div class="tabs reveal" style="--reveal-d:.1s" id="tabs" role="tablist" aria-label="Práticas do Orodim"></div>
       <div class="stage-body" id="stageBody"></div>
     </div>
   </section>
@@ -356,16 +365,16 @@ main{padding-top:59px}
   <!-- ROUTINE -->
   <section class="section" id="rotina">
     <div class="section-inner center">
-      <span class="mono mono--green">Consistência</span>
-      <h2 style="margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em">Transforme prática em rotina</h2>
-      <p style="margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)">Veja o que você praticou em cada dia e acompanhe sua consistência ao longo do tempo.</p>
+      <span class="mono mono--green reveal">Consistência</span>
+      <h2 class="reveal" style="--reveal-d:.08s; margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em">Transforme prática em rotina</h2>
+      <p class="reveal" style="--reveal-d:.16s; margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)">Veja o que você praticou em cada dia e acompanhe sua consistência ao longo do tempo.</p>
 
       <div class="flank flank--routine" style="margin-top:48px">
-        <div class="col-left">
+        <div class="col-left reveal reveal--left">
           <div class="note note--left"><span class="note-num-m">01</span><div class="note-body"><span class="note-num-d">01</span><p>Confira as práticas concluídas no dia.</p></div><span class="note-line"></span></div>
           <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p>Dias completos ficam destacados no calendário.</p></div><span class="note-line"></span></div>
         </div>
-        <div class="col-phone">
+        <div class="col-phone reveal reveal--scale">
           <figure class="phone">
             <div class="phone-shell"><div class="phone-screen">
               <img src="/assets/img/calendario-estudos.webp" alt="Calendário de estudos com os dias praticados" width="480" height="1032" loading="lazy" decoding="async">
@@ -373,7 +382,7 @@ main{padding-top:59px}
             </div></div>
           </figure>
         </div>
-        <div class="col-right">
+        <div class="col-right reveal reveal--right">
           <div class="note note--right"><span class="note-line"></span><span class="note-num-m">03</span><div class="note-body"><span class="note-num-d">03</span><p>Consulte seu histórico de atividades.</p></div></div>
           <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p>Continue de onde parou no dia seguinte.</p></div></div>
         </div>
@@ -384,9 +393,9 @@ main{padding-top:59px}
   <!-- LEVELS -->
   <section class="section" id="niveis">
     <div class="section-inner levels">
-      <span class="mono mono--green">Progressão</span>
-      <h2>Do A1 ao C2, um passo de cada vez</h2>
-      <div class="path" id="path">
+      <span class="mono mono--green reveal">Progressão</span>
+      <h2 class="reveal" style="--reveal-d:.08s">Do A1 ao C2, um passo de cada vez</h2>
+      <div class="path reveal" style="--reveal-d:.16s" id="path">
         <div class="path-track"><span class="path-fill"></span></div>
         <div class="levels-grid">
           <div class="level"><span class="level-tick"></span><p class="level-code">A1</p><span class="mono level-label">Começo</span><p class="level-note">Frases curtas e assuntos do dia a dia.</p></div>
@@ -397,21 +406,21 @@ main{padding-top:59px}
           <div class="level"><span class="level-tick"></span><p class="level-code">C2</p><span class="mono level-label">Proficiência</span><p class="level-note">Domínio em qualquer contexto.</p></div>
         </div>
       </div>
-      <p class="levels-note">Seu nível acompanha sua progressão no currículo. Você avança conforme evolui — sem perder o progresso que já conquistou.</p>
+      <p class="levels-note reveal">Seu nível acompanha sua progressão no currículo. Você avança conforme evolui — sem perder o progresso que já conquistou.</p>
     </div>
   </section>
 
   <!-- PRICING -->
   <section class="section" id="preco">
     <div class="pricing-inner">
-      <div class="pricing-head">
+      <div class="pricing-head reveal">
         <h2>Dois planos, mês a mês</h2>
         <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">sem plano anual · cancele quando quiser</span></p>
       </div>
 
       <!-- mobile stacked -->
       <div class="plans-mobile">
-        <div class="plan">
+        <div class="plan reveal">
           <div class="plan-top"><span class="mono">Essencial</span></div>
           <p class="plan-price">R$ 34<span class="cents">,90</span><span class="per">/mês</span></p>
           <p class="plan-sub">Para manter uma rotina diária.</p>
@@ -424,7 +433,7 @@ main{padding-top:59px}
           </ul>
           <a href="#download" class="btn btn-ghost plan-btn">Baixe o app</a>
         </div>
-        <div class="plan featured">
+        <div class="plan featured reveal" style="--reveal-d:.1s">
           <div class="plan-top"><span class="mono">Plus</span><span class="mono mono--green">mais completo</span></div>
           <p class="plan-price">R$ 59<span class="cents">,90</span><span class="per">/mês</span></p>
           <p class="plan-sub">Para praticar mais vezes ao longo do dia.</p>
@@ -440,7 +449,7 @@ main{padding-top:59px}
       </div>
 
       <!-- desktop comparison table -->
-      <div class="plans-table-wrap">
+      <div class="plans-table-wrap reveal">
         <table class="plans-table">
           <thead>
             <tr>
@@ -482,10 +491,10 @@ main{padding-top:59px}
   <!-- FINAL CTA -->
   <section class="section cta" id="download">
     <div class="section-inner">
-      <span class="mono mono--green">Comece agora</span>
-      <h2>Bora falar inglês de verdade?</h2>
-      <p class="cta-copy">Baixe o Orodim e comece a praticar inglês no seu nível.</p>
-      <div class="cta-actions">
+      <span class="mono mono--green reveal">Comece agora</span>
+      <h2 class="reveal" style="--reveal-d:.08s">Bora falar inglês de verdade?</h2>
+      <p class="cta-copy reveal" style="--reveal-d:.16s">Baixe o Orodim e comece a praticar inglês no seu nível.</p>
+      <div class="cta-actions reveal" style="--reveal-d:.24s">
         <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">sem plano anual · cancele quando quiser</span></p>
         <div class="cta-store-box">
           <span class="mono" style="display:block">Escolha a sua loja</span>
@@ -493,7 +502,7 @@ main{padding-top:59px}
           <p class="cta-store-note">O app chega em breve na App Store e no Google Play. A assinatura é escolhida dentro do aplicativo Orodim.</p>
         </div>
       </div>
-      <figure class="phone cta-phone">
+      <figure class="phone cta-phone reveal reveal--scale">
         <div class="phone-shell"><div class="phone-screen">
           <img src="/assets/img/hero-conversa-voz.webp" alt="Conversa por voz com a tutora de IA" width="480" height="1015" loading="lazy" decoding="async">
           <span class="phone-bar"></span>
@@ -692,6 +701,21 @@ main{padding-top:59px}
     pio.observe(path);
   } else if (path){
     path.classList.add('on');
+  }
+
+  /* ---------- scroll reveal on view ---------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (revealEls.length){
+    if ('IntersectionObserver' in window){
+      var rio = new IntersectionObserver(function(entries){
+        entries.forEach(function(x){
+          if (x.isIntersecting){ x.target.classList.add('is-in'); rio.unobserve(x.target); }
+        });
+      }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+      revealEls.forEach(function(el){ rio.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('is-in'); });
+    }
   }
 })();
 </script>
