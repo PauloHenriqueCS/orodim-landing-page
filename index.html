@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orodim — aprenda inglês com IA: escrita, pronúncia, listening e conversação</title>
-<meta name="description" content="Aprenda inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível e aos assuntos que você gosta — com progressão real do A1 ao C2.">
+<title>Orodim — inglês com IA: escrita, pronúncia e conversação</title>
+<meta name="description" content="Pratique inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível — com progressão real do A1 ao C2.">
 <link rel="canonical" href="https://www.orodim.com.br/">
+<link rel="alternate" hreflang="pt-BR" href="https://www.orodim.com.br/">
+<link rel="alternate" hreflang="x-default" href="https://www.orodim.com.br/">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/favicon.png">
@@ -26,11 +28,56 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Orodim",
-  "url": "https://www.orodim.com.br/",
-  "logo": "https://www.orodim.com.br/assets/logo.png",
-  "description": "Aplicativo de ensino de inglês com IA que monta missões personalizadas e acompanha o progresso do aluno todo dia."
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.orodim.com.br/#organization",
+      "name": "Orodim",
+      "url": "https://www.orodim.com.br/",
+      "logo": "https://www.orodim.com.br/assets/logo.png",
+      "email": "contato@orodim.com.br",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contato@orodim.com.br",
+        "contactType": "customer support",
+        "availableLanguage": ["Portuguese"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.orodim.com.br/#website",
+      "url": "https://www.orodim.com.br/",
+      "name": "Orodim",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://www.orodim.com.br/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Orodim",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "EducationalApplication",
+      "inLanguage": "pt-BR",
+      "url": "https://www.orodim.com.br/",
+      "description": "Aplicativo de ensino de inglês com IA que adapta escrita, pronúncia, listening e conversação ao nível do aluno, com revisão dos erros e progressão do A1 ao C2.",
+      "publisher": { "@id": "https://www.orodim.com.br/#organization" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essencial",
+          "price": "34.90",
+          "priceCurrency": "BRL",
+          "category": "subscription"
+        },
+        {
+          "@type": "Offer",
+          "name": "Plus",
+          "price": "59.90",
+          "priceCurrency": "BRL",
+          "category": "subscription"
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -594,27 +641,27 @@ main{padding-top:59px}
     { tab:'Escrita', headline:'Uma missão para colocar seu inglês em prática',
       copy:'Escreva em inglês a partir de uma proposta adequada ao seu nível e receba uma análise detalhada da sua resposta, com nota geral, desempenho por habilidade, explicações e uma versão corrigida para comparar.',
       notes:['Missão alinhada ao seu nível atual.','Orientação clara para começar a escrever.','Escreva livremente em inglês.','Envie quando quiser receber a análise da IA.','Avaliação de gramática, vocabulário, naturalidade e fluência.','Compare seu texto com a versão corrigida.','Entenda os pontos que merecem mais atenção.','Erros importantes podem voltar em Revisar meus erros.'],
-      shots:[{src:'/assets/img/seu-texto-ingles.webp', alt:'Tela de escrita em inglês no Orodim'},{src:'/assets/img/hero-relatorio-professor.webp', alt:'Análise da escrita com nota geral e desempenho por habilidade'}] },
+      shots:[{src:'/assets/img/seu-texto-ingles.webp', w:500, h:1113, alt:'Tela de escrita em inglês no Orodim'},{src:'/assets/img/hero-relatorio-professor.webp', w:500, h:1105, alt:'Análise da escrita com nota geral e desempenho por habilidade'}] },
     { tab:'Pronúncia', headline:'Descubra exatamente o que melhorar',
       copy:'Grave sua voz e veja, palavra por palavra, o que está bom e o que ainda precisa de prática.',
       notes:['Análise palavra por palavra.','Veja rapidamente onde concentrar sua prática.','Ouça o modelo e tente novamente.','Repita as palavras que precisam de mais atenção.'],
-      shots:[{src:'/assets/img/leitura-palavra-por-palavra.webp', alt:'Leitura analisada palavra por palavra'},{src:'/assets/img/resultado-pronuncia.webp', alt:'Resultado da pronúncia com as palavras para praticar'}] },
+      shots:[{src:'/assets/img/leitura-palavra-por-palavra.webp', w:540, h:1180, alt:'Leitura analisada palavra por palavra'},{src:'/assets/img/resultado-pronuncia.webp', w:500, h:1121, alt:'Resultado da pronúncia com as palavras para praticar'}] },
     { tab:'Listening', headline:'Treine seu ouvido sem ficar perdido',
       copy:'Ouça histórias adequadas ao seu nível, acompanhe a transcrição quando precisar e teste o que entendeu.',
       notes:['Histórias em inglês adequadas ao seu nível.','Controle a velocidade do áudio.','Consulte transcrição e tradução quando precisar.','Responda perguntas para testar sua compreensão.'],
-      shots:[{src:'/assets/img/listening-historia.png', alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/listening-audio.png', alt:'Player de listening com controle de velocidade, transcrição e reouvir com legenda'}] },
+      shots:[{src:'/assets/img/listening-historia.png', w:556, h:1222, alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/listening-audio.png', w:546, h:1212, alt:'Player de listening com controle de velocidade, transcrição e reouvir com legenda'}] },
     { tab:'Conversação', headline:'Converse em inglês de verdade',
       copy:'Pratique por voz com uma tutora de IA em tempo real. Escolha entre conversa guiada ou livre e personalize a experiência do tutor.',
       notes:['Converse por voz em tempo real.','Use legendas quando quiser.','Personalize voz e estilo do tutor.','Escolha como quer conduzir a conversa.'],
-      shots:[{src:'/assets/img/hero-conversa-voz.webp', alt:'Conversa por voz com a tutora de IA'}] },
+      shots:[{src:'/assets/img/hero-conversa-voz.webp', w:480, h:1015, alt:'Conversa por voz com a tutora de IA'}] },
     { tab:'Revisar meus erros', headline:'Seus erros não terminam na correção',
       copy:'O que merece mais atenção volta em atividades de revisão para você tentar novamente até dominar.',
       notes:['Veja o erro que você realmente cometeu.','Tente escrever a forma correta.','Receba feedback logo após responder.','Continue revisando os pontos que ainda precisam de prática.'],
-      shots:[{src:'/assets/img/revisao.png', alt:'Atividade Revisar meus erros mostrando o que você escreveu e o campo para escrever a forma correta'}] },
+      shots:[{src:'/assets/img/revisao.png', w:550, h:1212, alt:'Atividade Revisar meus erros mostrando o que você escreveu e o campo para escrever a forma correta'}] },
     { tab:'Evolução', headline:'Você vê o progresso acontecendo',
       copy:'Acompanhe seu desempenho ao longo do tempo, compare habilidades e veja como sua escrita está evoluindo.',
       notes:['Gramática, vocabulário, naturalidade e fluência separadamente.','Compare diferentes períodos.','Acompanhe notas e avaliações ao longo do tempo.','Veja sua evolução sempre que quiser.'],
-      shots:[{src:'/assets/img/evolucao-tela.webp', alt:'Tela de evolução com desempenho por habilidade'}] }
+      shots:[{src:'/assets/img/evolucao-tela.webp', w:480, h:1040, alt:'Tela de evolução com desempenho por habilidade'}] }
   ];
 
   function pad(n){ return String(n).padStart(2,'0'); }
@@ -632,8 +679,9 @@ main{padding-top:59px}
   }
 
   function phoneHTML(shot){
+    var dims = (shot.w && shot.h) ? ' width="'+shot.w+'" height="'+shot.h+'"' : '';
     return '<figure class="phone"><div class="phone-shell"><div class="phone-screen">'+
-      '<img src="'+shot.src+'" alt="'+esc(shot.alt)+'" loading="lazy" decoding="async">'+
+      '<img src="'+shot.src+'" alt="'+esc(shot.alt)+'"'+dims+' loading="lazy" decoding="async">'+
       '<span class="phone-bar"></span></div></div></figure>';
   }
 
