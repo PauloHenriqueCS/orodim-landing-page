@@ -546,7 +546,7 @@ main{padding-top:59px}
         <div class="cta-store-box">
           <span class="mono" style="display:block">Escolha a sua loja</span>
           <div class="stores center" id="storesCta" style="margin-top:20px"></div>
-          <p class="cta-store-note">O app chega em breve na App Store e no Google Play. A assinatura é escolhida dentro do aplicativo Orodim.</p>
+          <p class="cta-store-note">Baixe o Orodim na App Store e no Google Play. A assinatura é escolhida dentro do aplicativo Orodim.</p>
         </div>
       </div>
       <figure class="phone cta-phone reveal reveal--scale">
@@ -620,15 +620,16 @@ main{padding-top:59px}
   /* ---------- store badges ---------- */
   var APPLE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.32.86 1.24 1.89 2.64 3.23 2.59 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.15-2.52.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.05-2.75-4.13ZM14.47 4.45c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-3 1.54-.66.76-1.24 1.98-1.08 3.14 1.14.09 2.31-.58 3.02-1.43Z"/></svg>';
   var PLAY = '<svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M47.6 0C34.5 6.8 26 19.2 26 35.3V476.6c0 16.1 8.5 28.5 21.6 35.3l257-256L47.6 0Zm277.7 234.3L104.6 13l280.8 161.2-60.1 60.1ZM472.3 256l-58.9-34.2-64.9 64.9 64.9 64.9L472.3 256ZM104.6 499l280.8-161.2-60.1-60.1L104.6 499Z"/></svg>';
+  var APP_STORE_URL = 'https://apps.apple.com/br/app/orodim-ingl%C3%AAs-na-pr%C3%A1tica/id6794127995';
+  var PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.orodim.app';
   function storesHTML(){
     var b = [
-      { label:'App Store', pre:'Em breve na', glyph:APPLE },
-      { label:'Google Play', pre:'Em breve no', glyph:PLAY }
+      { label:'App Store', pre:'Baixe na', glyph:APPLE, href:APP_STORE_URL, store:'ios', aria:'Baixar na App Store' },
+      { label:'Google Play', pre:'Baixe no', glyph:PLAY, href:PLAY_STORE_URL, store:'android', aria:'Baixar no Google Play' }
     ];
     return b.map(function(x){
-      return '<span class="store" role="img" aria-label="'+x.label+' — disponível em breve">'+x.glyph+
-        '<span class="store-txt"><small>'+x.pre+'</small><b>'+x.label+'</b></span>'+
-        '<span class="store-tag">Em breve</span></span>';
+      return '<a class="store" href="'+x.href+'" data-store="'+x.store+'" style="cursor:pointer" aria-label="'+x.aria+'">'+x.glyph+
+        '<span class="store-txt"><small>'+x.pre+'</small><b>'+x.label+'</b></span></a>';
     }).join('');
   }
   ['storesHero','storesCta'].forEach(function(id){
@@ -765,6 +766,50 @@ main{padding-top:59px}
       revealEls.forEach(function(el){ el.classList.add('is-in'); });
     }
   }
+})();
+</script>
+
+<!-- AppsFlyer OneLink Smart Script V2 — preserva atribuição (pid, af_c_id, af_adset_id, af_ad_id, gclid, gbraid, wbraid) -->
+<script src="https://onelinksmartscript.appsflyersdk.com/onelink-smart-script-latest.js"></script>
+<script>
+(function(){
+  "use strict";
+  // Só executa se a biblioteca AppsFlyer carregou; caso contrário, os botões mantêm os links diretos das lojas.
+  if (!window.AF_SMART_SCRIPT || typeof window.AF_SMART_SCRIPT.generateOneLinkURL !== 'function') return;
+  try {
+    var oneLinkURL = "https://orodim.onelink.me/FNe1";
+
+    var mediaSource = { keys: ["pid"], defaultValue: "website" };
+    var af_c_id     = { paramKey: "af_c_id",    keys: ["af_c_id"] };
+    var af_adset_id = { paramKey: "af_adset_id", keys: ["af_adset_id"] };
+    var af_ad_id    = { paramKey: "af_ad_id",   keys: ["af_ad_id"] };
+    var custom_ss_ui = { paramKey: "af_ss_ui",  defaultValue: "true" };
+    // gclid, gbraid e wbraid são encaminhados automaticamente pelo Smart Script V2
+    // (forwarding parameters), então não precisam ser mapeados em afCustom.
+
+    var result = window.AF_SMART_SCRIPT.generateOneLinkURL({
+      oneLinkURL: oneLinkURL,
+      SEO: true,
+      afParameters: {
+        mediaSource: mediaSource,
+        afCustom: [ af_c_id, af_adset_id, af_ad_id, custom_ss_ui ]
+      }
+    });
+
+    if (result && result.clickURL) {
+      var ua = navigator.userAgent || "";
+      var isIOS = /iPad|iPhone|iPod/.test(ua) ||
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS
+      var isAndroid = /Android/.test(ua);
+      // Desktop: mantém os links diretos (selector null); mobile: sobrescreve só o botão da loja da plataforma.
+      var selector = isIOS ? '[data-store="ios"]' : (isAndroid ? '[data-store="android"]' : null);
+      if (selector) {
+        Array.prototype.forEach.call(document.querySelectorAll('a.store' + selector), function(a){
+          a.setAttribute('href', result.clickURL);
+        });
+      }
+    }
+  } catch (e) { /* falha do AppsFlyer não quebra a página: botões seguem com os links diretos */ }
 })();
 </script>
 </body>
