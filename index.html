@@ -310,12 +310,22 @@ main{padding-top:59px}
 
 /* ---------- final cta ---------- */
 .cta{text-align:center; border-bottom:0}
-.cta h2{margin:28px auto 0; max-width:18ch; font-size:clamp(2.1rem,5.2vw,4rem); font-weight:600; line-height:1; letter-spacing:-.035em}
-.cta-copy{margin:24px auto 0; max-width:44ch; font-size:1rem; line-height:1.6; color:var(--mist)}
-.cta-actions{margin-top:40px; display:flex; flex-direction:column; align-items:center; gap:24px}
-.cta-store-box{width:100%; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:32px 0}
-.cta-store-note{margin-top:20px; font-size:.86rem; color:var(--mist)}
-.cta-phone{margin:64px auto 0; max-width:280px}
+.cta-grid{max-width:1080px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:40px}
+.cta-text{width:100%}
+.cta h2{margin:20px auto 0; max-width:18ch; font-size:clamp(2rem,4.4vw,3.4rem); font-weight:600; line-height:1.04; letter-spacing:-.035em}
+.cta-copy{margin:20px auto 0; max-width:44ch; font-size:1rem; line-height:1.6; color:var(--mist)}
+.cta-actions{margin-top:32px; display:flex; flex-direction:column; align-items:center; gap:20px}
+.cta-store-box{width:100%; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:24px 0}
+.cta-store-note{margin-top:16px; font-size:.86rem; color:var(--mist)}
+.cta-phone{margin:0 auto; max-width:200px}
+@media(min-width:1024px){
+  .cta{text-align:left}
+  .cta-grid{display:grid; grid-template-columns:minmax(0,1fr) 250px; align-items:center; gap:72px}
+  .cta h2,.cta-copy{margin-left:0; margin-right:0}
+  .cta-actions{align-items:flex-start}
+  .cta .stores.center{justify-content:flex-start}
+  .cta-phone{max-width:250px}
+}
 
 /* ---------- faq ---------- */
 .faq{border-top:1px solid var(--line); border-bottom:0}
@@ -614,7 +624,8 @@ main{padding-top:59px}
 
   <!-- FINAL CTA -->
   <section class="section cta" id="download">
-    <div class="section-inner">
+    <div class="section-inner cta-grid">
+      <div class="cta-text">
       <span class="mono mono--green reveal">Comece agora</span>
       <h2 class="reveal" style="--reveal-d:.08s">Sua primeira conversa em inglês pode começar hoje.</h2>
       <p class="cta-copy reveal" style="--reveal-d:.16s">Baixe o Orodim e pratique por voz com uma tutora de IA, no seu nível.</p>
@@ -625,6 +636,7 @@ main{padding-top:59px}
           <div class="stores center" id="storesCta" style="margin-top:20px"></div>
           <p class="cta-store-note">Baixe o Orodim na App Store e no Google Play. A assinatura é escolhida dentro do aplicativo Orodim.</p>
         </div>
+      </div>
       </div>
       <figure class="phone cta-phone reveal reveal--scale">
         <div class="phone-shell"><div class="phone-screen">
