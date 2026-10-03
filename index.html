@@ -161,14 +161,15 @@ main{padding-top:59px}
 .note{display:flex; align-items:flex-start; gap:12px; text-align:left}
 .note-num-m{margin-top:3px; flex:0 0 auto; border:1px solid rgba(63,185,138,.4); padding:1px 6px; font-family:var(--mono); font-size:.58rem; letter-spacing:.12em; color:var(--green)}
 .note-num-d{display:none; font-family:var(--mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.2em; color:var(--green)}
-.note p{font-size:.9rem; line-height:1.7; color:rgba(237,243,250,.8)}
-.note .note-title{font-size:.98rem; font-weight:600; line-height:1.35; letter-spacing:-.01em; color:var(--bone)}
-.note .note-title + p{margin-top:4px}
+.note p,.note .note-text{display:block; font-size:.9rem; line-height:1.7; color:rgba(237,243,250,.8)}
+.note .note-title{display:block; font-size:.98rem; font-weight:600; line-height:1.35; letter-spacing:-.01em; color:var(--bone)}
+.note .note-title + p,.note .note-title + .note-text{margin-top:4px}
 .note-line{display:none}
 @media(min-width:1024px){
   .note-num-m{display:none}
   .note-num-d{display:block}
-  .note p{margin-top:8px}
+  .note p,.note .note-title{margin-top:8px}
+  .note .note-title + .note-text{margin-top:4px}
   .note-line{display:block; margin-top:8px; height:1px; width:40px; flex:0 0 auto; background:rgba(63,185,138,.4)}
   .note--left{justify-content:flex-end}
   .note--left .note-body{text-align:right}
@@ -203,6 +204,22 @@ main{padding-top:59px}
 .flank--hero{max-width:1000px; margin-top:48px}
 
 /* ---------- hero ---------- */
+/* demo: benefícios clicáveis ligados às telas do celular */
+.hero-benefit{width:100%; background:none; border:0; padding:0; margin:0; font:inherit; color:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent}
+.hero-benefit .note-num-m{color:var(--mist-2); border-color:var(--line-2); transition:color .3s var(--ease),border-color .3s var(--ease)}
+.hero-benefit .note-num-d{color:var(--mist-2); transition:color .3s var(--ease)}
+.hero-benefit .note-line{background:var(--line-2); transition:background .3s var(--ease)}
+.hero-benefit .note-title{transform-origin:left center; transition:color .3s var(--ease),transform .3s var(--ease)}
+.hero-benefit:hover .note-title{color:#fff}
+.hero-benefit.is-active .note-num-m{color:var(--green); border-color:var(--green)}
+.hero-benefit.is-active .note-num-d{color:var(--green)}
+.hero-benefit.is-active .note-line{background:var(--green)}
+.hero-benefit.is-active .note-title{color:var(--green); transform:scale(1.05)}
+@media(min-width:1024px){ .note--left.hero-benefit .note-title{transform-origin:right center} }
+.hero-screen{aspect-ratio:540/1180}
+.hero-screen .hero-shot{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; opacity:0; transition:opacity .3s ease}
+.hero-screen .hero-shot.is-active{opacity:1}
+
 .hero{text-align:center}
 .hero h1{margin:32px auto 0; max-width:26ch; font-size:clamp(2.1rem,5vw,3.9rem); font-weight:600; line-height:1.02; letter-spacing:-.035em}
 .hero-lead{margin:28px auto 0; max-width:62ch; font-size:1rem; line-height:1.8; color:var(--mist)}
@@ -235,13 +252,20 @@ main{padding-top:59px}
 @media(min-width:768px){ .tabs{display:flex; flex-wrap:wrap; justify-content:center; gap:32px} }
 .tab{display:flex; flex-direction:column; align-items:flex-start; gap:8px; background:none; border:0; cursor:pointer; padding:0}
 @media(min-width:768px){ .tab{align-items:center; flex:0 0 auto} }
-.tab-bar{height:3px; width:100%; background:rgba(255,255,255,.15); transition:background .2s var(--ease)}
+.tab-bar{position:relative; overflow:hidden; height:3px; width:100%; background:rgba(255,255,255,.15); transition:background .2s var(--ease)}
+.tab-fill{position:absolute; inset:0; background:var(--green); transform:scaleX(0); transform-origin:left center}
+.tab.is-active .tab-fill{animation:tab-fill 4s linear forwards}
+.tabs.is-paused .tab.is-active .tab-fill{animation-play-state:paused}
+.tabs.is-manual .tab.is-active .tab-fill{animation:none; transform:none}
+@keyframes tab-fill{from{transform:scaleX(0)} to{transform:scaleX(1)}}
+.tabs-toggle{display:flex; align-items:center; gap:8px; margin:14px auto 0; background:none; border:0; padding:4px 6px; cursor:pointer; font-family:var(--mono); font-size:.58rem; text-transform:uppercase; letter-spacing:.14em; color:var(--mist-2); transition:color .2s var(--ease)}
+.tabs-toggle:hover{color:var(--bone)}
+.tabs-toggle svg{width:10px; height:10px; flex:0 0 auto}
 @media(min-width:768px){ .tab-bar{width:56px} }
 .tab-label{font-family:var(--mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.14em; line-height:1.3; color:var(--mist-2); text-align:left; transition:color .2s var(--ease)}
 @media(min-width:768px){ .tab-label{text-align:center; white-space:nowrap; letter-spacing:.16em} }
 .tab:hover .tab-bar{background:rgba(255,255,255,.35)}
 .tab:hover .tab-label{color:var(--mist)}
-.tab.is-active .tab-bar{background:var(--green)}
 .tab.is-active .tab-label{color:var(--green)}
 
 .stage-body{padding-top:48px; transition:opacity .22s var(--ease), transform .22s var(--ease)}
@@ -353,7 +377,8 @@ main{padding-top:59px}
 
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important; scroll-behavior:auto!important}
-  .stage-body,.path-fill{transition:none!important}
+  .stage-body,.path-fill,.hero-shot{transition:none!important}
+  .tab.is-active .tab-fill{transform:none}
   .reveal-on .reveal{opacity:1!important; transform:none!important; transition:none!important}
 }
 </style>
@@ -457,22 +482,25 @@ main{padding-top:59px}
       <h1 class="reveal" style="--reveal-d:.08s">Na hora de falar inglês, as palavras somem?</h1>
       <p class="hero-lead reveal" style="--reveal-d:.16s">Treine conversas por voz e receba correções na escrita e na pronúncia. No Orodim, seus próprios erros viram atividades para você continuar evoluindo.</p>
 
-      <div class="flank flank--hero">
+      <div class="flank flank--hero" id="heroDemo">
         <div class="col-left reveal reveal--left" style="--reveal-d:.24s">
-          <div class="note note--left"><span class="note-num-m">01</span><div class="note-body"><span class="note-num-d">01</span><p class="note-title">Mais prática para conversar</p><p>Treine conversas por voz com uma tutora de IA.</p></div><span class="note-line"></span></div>
-          <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p class="note-title">Saiba onde melhorar sua pronúncia</p><p>Descubra quais palavras precisam de mais atenção.</p></div><span class="note-line"></span></div>
+          <button type="button" class="note note--left hero-benefit is-active" data-i="0" aria-pressed="true" aria-controls="heroShots"><span class="note-num-m">01</span><span class="note-body"><span class="note-num-d">01</span><span class="note-title">Saiba onde melhorar sua pronúncia</span><span class="note-text">Descubra quais palavras precisam de mais atenção.</span></span><span class="note-line"></span></button>
+          <button type="button" class="note note--left hero-benefit" data-i="1" aria-pressed="false" aria-controls="heroShots"><span class="note-num-m">02</span><span class="note-body"><span class="note-num-d">02</span><span class="note-title">Mais prática para conversar</span><span class="note-text">Treine conversas por voz com uma tutora de IA.</span></span><span class="note-line"></span></button>
         </div>
         <div class="col-phone reveal reveal--scale" style="--reveal-d:.12s">
           <figure class="phone">
-            <div class="phone-shell"><div class="phone-screen">
-              <img src="/assets/img/home.webp" alt="Tela inicial do Orodim com as práticas disponíveis" width="1190" height="2576" fetchpriority="high" decoding="async">
+            <div class="phone-shell"><div class="phone-screen hero-screen" id="heroShots">
+              <img class="hero-shot is-active" src="/assets/img/leitura-palavra-por-palavra.webp" alt="Análise da pronúncia palavra por palavra" width="540" height="1180" fetchpriority="high" decoding="async">
+              <img class="hero-shot" src="/assets/img/hero-conversa-voz.webp" alt="Conversa por voz com a tutora de IA" width="480" height="1015" aria-hidden="true" decoding="async">
+              <img class="hero-shot" src="/assets/img/hero-listening.webp" alt="Listening com player de áudio, controle de velocidade e texto da história" width="540" height="1170" aria-hidden="true" decoding="async">
+              <img class="hero-shot" src="/assets/img/hero-relatorio-professor.webp" alt="Relatório da escrita com correções e explicações" width="500" height="1105" aria-hidden="true" decoding="async">
               <span class="phone-bar"></span>
             </div></div>
           </figure>
         </div>
         <div class="col-right reveal reveal--right" style="--reveal-d:.24s">
-          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">03</span><div class="note-body"><span class="note-num-d">03</span><p class="note-title">Entenda os erros da sua escrita</p><p>Veja as correções e as explicações para melhorar seu texto.</p></div></div>
-          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p class="note-title">Transforme seus erros em aprendizado</p><p>Pratique novamente os pontos em que você teve dificuldade.</p></div></div>
+          <button type="button" class="note note--right hero-benefit" data-i="2" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">03</span><span class="note-body"><span class="note-num-d">03</span><span class="note-title">Entenda melhor o inglês que você ouve</span><span class="note-text">Ouça histórias no seu nível e teste o que entendeu, com transcrição e tradução quando precisar.</span></span></button>
+          <button type="button" class="note note--right hero-benefit" data-i="3" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">04</span><span class="note-body"><span class="note-num-d">04</span><span class="note-title">Entenda os erros da sua escrita</span><span class="note-text">Veja as correções e as explicações para melhorar seu texto.</span></span></button>
         </div>
       </div>
 
@@ -491,6 +519,7 @@ main{padding-top:59px}
         <p>Da conversa por voz à correção dos seus textos: explore o que você pode praticar.</p>
       </div>
       <div class="tabs reveal" style="--reveal-d:.1s" id="tabs" role="tablist" aria-label="Práticas do Orodim"></div>
+      <button type="button" class="tabs-toggle" id="tabsToggle" aria-controls="tabs" hidden></button>
       <div class="stage-body" id="stageBody"></div>
     </div>
   </section>
@@ -771,6 +800,85 @@ main{padding-top:59px}
     if (el) el.innerHTML = storesHTML();
   });
 
+  /* ---------- hero demo: benefícios ligados às telas ---------- */
+  (function(){
+    var demo = document.getElementById('heroDemo');
+    var screen = document.getElementById('heroShots');
+    if (!demo || !screen) return;
+    var btns = Array.prototype.slice.call(demo.querySelectorAll('.hero-benefit'));
+    var shots = Array.prototype.slice.call(screen.querySelectorAll('.hero-shot'));
+    var INTERVAL = 4000;
+    var ORDER = [0, 1, 2, 3]; // Pronúncia → Conversação → Listening → Escrita → Pronúncia
+    var current = 0, shown = 0, timer = null;
+    var rm = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    var paused = { hover:false, focus:false, offscreen:false, hidden:document.hidden, motion:!!(rm && rm.matches) };
+
+    function showShot(i){
+      var img = shots[i];
+      function swap(){
+        if (current !== i) return; // outra seleção chegou antes do carregamento
+        shots.forEach(function(s, k){
+          s.classList.toggle('is-active', k === i);
+          if (k === i) s.removeAttribute('aria-hidden'); else s.setAttribute('aria-hidden', 'true');
+        });
+        shown = i;
+      }
+      // mantém a tela anterior até a nova estar pronta: sem flash nem tela vazia
+      if (img.complete && img.naturalWidth) swap(); else img.addEventListener('load', swap, { once:true });
+    }
+    function select(i){
+      if (i === current && i === shown) return;
+      current = i;
+      btns.forEach(function(b){
+        var on = parseInt(b.getAttribute('data-i'), 10) === i;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      showShot(i);
+    }
+    function isPaused(){ for (var k in paused) if (paused[k]) return true; return false; }
+    function schedule(){ // um único temporizador: sempre limpa antes de agendar
+      if (timer) { clearTimeout(timer); timer = null; }
+      if (isPaused()) return;
+      timer = setTimeout(function(){
+        timer = null;
+        select(ORDER[(ORDER.indexOf(current) + 1) % ORDER.length]);
+        schedule();
+      }, INTERVAL);
+    }
+    function setPause(reason, on){ if (paused[reason] === on) return; paused[reason] = on; schedule(); }
+
+    btns.forEach(function(b){
+      var i = parseInt(b.getAttribute('data-i'), 10);
+      b.addEventListener('click', function(){ select(i); schedule(); }); // clique, toque, Enter e Espaço
+      b.addEventListener('pointerenter', function(e){
+        if (e.pointerType !== 'mouse') return; // toque não deve deixar a pausa presa
+        select(i); setPause('hover', true);
+      });
+    });
+    demo.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') setPause('hover', false); });
+    demo.addEventListener('focusin', function(e){ // só foco de teclado; toque e clique também focam o botão
+      var t = e.target;
+      var kb = true; try { kb = t.matches(':focus-visible'); } catch (err) {}
+      if (t.closest('.hero-benefit') && kb) setPause('focus', true);
+    });
+    demo.addEventListener('focusout', function(e){
+      var to = e.relatedTarget;
+      if (!to || !to.closest || !to.closest('.hero-benefit') || !demo.contains(to)) setPause('focus', false);
+    });
+    document.addEventListener('visibilitychange', function(){ setPause('hidden', document.hidden); });
+    if (rm) {
+      var onMotion = function(e){ setPause('motion', e.matches); };
+      if (rm.addEventListener) rm.addEventListener('change', onMotion); else if (rm.addListener) rm.addListener(onMotion);
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        entries.forEach(function(x){ setPause('offscreen', !x.isIntersecting); });
+      }, { threshold:.25 }).observe(screen);
+    }
+    schedule();
+  })();
+
   /* ---------- interactive practice viewer ---------- */
   var SCENES = [
     { tab:'Pronúncia', headline:'Veja, palavra por palavra, onde melhorar sua pronúncia.',
@@ -788,7 +896,7 @@ main{padding-top:59px}
     { tab:'Listening', headline:'Treine seu ouvido sem ficar perdido',
       copy:'Ouça histórias adequadas ao seu nível, acompanhe a transcrição quando precisar e teste o que entendeu.',
       notes:['Histórias em inglês adequadas ao seu nível.','Controle a velocidade do áudio.','Consulte transcrição e tradução quando precisar.','Responda perguntas para testar sua compreensão.'],
-      shots:[{src:'/assets/img/listening-historia.webp', w:556, h:1222, alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/listening-audio.webp', w:546, h:1212, alt:'Player de listening com controle de velocidade, transcrição e reouvir com legenda'}] },
+      shots:[{src:'/assets/img/listening-historia.webp', w:556, h:1222, alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/hero-listening.webp', w:540, h:1170, alt:'Player de listening com controle de velocidade, reouvir com legenda e texto da história'}] },
     { tab:'Revisar meus erros', headline:'Seus erros não terminam na correção',
       copy:'O que merece mais atenção volta em atividades de revisão para você tentar novamente até dominar.',
       notes:['Veja o erro que você realmente cometeu.','Tente escrever a forma correta.','Receba feedback logo após responder.','Continue revisando os pontos que ainda precisam de prática.'],
@@ -839,12 +947,15 @@ main{padding-top:59px}
 
   var tabsEl = document.getElementById('tabs');
   var bodyEl = document.getElementById('stageBody');
+  var toggleEl = document.getElementById('tabsToggle');
+  var stageEl = document.getElementById('recursos');
   var active = 0;
+  var swapTimer = null;
 
   function buildTabs(){
     tabsEl.innerHTML = SCENES.map(function(s,i){
       return '<button type="button" class="tab'+(i===0?' is-active':'')+'" role="tab" aria-selected="'+(i===0)+'" data-i="'+i+'">'+
-        '<span class="tab-bar"></span>'+
+        '<span class="tab-bar"><span class="tab-fill"></span></span>'+
         '<span class="tab-label">'+pad(i+1)+' '+esc(s.tab)+'</span></button>';
     }).join('');
     Array.prototype.forEach.call(tabsEl.querySelectorAll('.tab'), function(btn){
@@ -860,19 +971,123 @@ main{padding-top:59px}
     });
   }
 
+  // reinicia a barra da aba ativa do zero (também quando a mesma aba é clicada de novo)
+  function restartFill(){
+    var fill = tabsEl.querySelector('.tab.is-active .tab-fill');
+    if (!fill) return;
+    fill.style.animation = 'none';
+    void fill.offsetWidth;
+    fill.style.animation = '';
+  }
+
   function setActive(i){
-    if (i === active) return;
+    if (i === active) { restartFill(); return; }
     active = i;
     paintTabs();
     bodyEl.classList.add('is-swapping');
-    window.setTimeout(function(){
+    if (swapTimer) window.clearTimeout(swapTimer); // trocas rápidas: só a última renderiza
+    swapTimer = window.setTimeout(function(){
+      swapTimer = null;
       bodyEl.innerHTML = sceneHTML(SCENES[active]);
       bodyEl.classList.remove('is-swapping');
+      // desktop: se a cena real passar da altura reservada, a reserva cresce (nunca encolhe)
+      if (deskMQ && deskMQ.matches && bodyEl.scrollHeight > bodyEl.offsetHeight) bodyEl.style.minHeight = bodyEl.scrollHeight+'px';
     }, 180);
   }
 
   buildTabs();
   bodyEl.innerHTML = sceneHTML(SCENES[0]);
+
+  /* desktop: reserva a altura da maior cena (variação pequena), então as trocas não deslocam a página.
+     celular/tablet: as cenas variam muito; sem reserva, e a troca automática só corre com as abas
+     inteiramente visíveis (ver observer abaixo), então nada muda enquanto se lê a parte de baixo. */
+  var deskMQ = window.matchMedia ? window.matchMedia('(min-width:1024px)') : null;
+  function reserveHeight(){
+    if (!deskMQ || !deskMQ.matches) { bodyEl.style.minHeight = ''; return; }
+    var probe = bodyEl.cloneNode(false);
+    probe.removeAttribute('id');
+    probe.setAttribute('aria-hidden', 'true');
+    probe.style.cssText = 'position:absolute; visibility:hidden; pointer-events:none; left:0; top:0; min-height:0; transition:none; width:'+bodyEl.getBoundingClientRect().width+'px';
+    probe.classList.remove('is-swapping');
+    document.body.appendChild(probe);
+    var max = 0;
+    SCENES.forEach(function(s){ probe.innerHTML = sceneHTML(s).replace(/ loading="lazy"/g, ''); max = Math.max(max, probe.offsetHeight); });
+    document.body.removeChild(probe);
+    bodyEl.style.minHeight = max ? max+'px' : '';
+  }
+  reserveHeight();
+  var rhTimer = null;
+  window.addEventListener('resize', function(){ window.clearTimeout(rhTimer); rhTimer = window.setTimeout(reserveHeight, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserveHeight);
+  window.addEventListener('load', reserveHeight);
+
+  /* pré-carrega as telas de todas as abas antes de a seção aparecer */
+  var preloaded = false;
+  function preloadShots(){
+    if (preloaded) return; preloaded = true;
+    SCENES.forEach(function(s){ s.shots.forEach(function(sh){ var im = new Image(); im.decoding = 'async'; im.src = sh.src; }); });
+  }
+
+  /* troca automática: a barra (animação CSS de 4 s) comanda a troca ao terminar */
+  var TAB_PAUSE_ICON = '<svg viewBox="0 0 10 10" aria-hidden="true"><rect x="1.5" y="1" width="2.4" height="8" fill="currentColor"/><rect x="6.1" y="1" width="2.4" height="8" fill="currentColor"/></svg>';
+  var TAB_PLAY_ICON = '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1l7 4-7 4z" fill="currentColor"/></svg>';
+  var tabRM = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var tabPause = { offscreen:true, hidden:document.hidden, hover:false, focus:false, user:false };
+
+  function applyTabPause(){
+    var any = false; for (var k in tabPause) if (tabPause[k]) any = true;
+    tabsEl.classList.toggle('is-paused', any);
+  }
+  function setTabPause(reason, on){ if (tabPause[reason] === on) return; tabPause[reason] = on; applyTabPause(); }
+  function paintToggle(){
+    var off = tabPause.user;
+    toggleEl.innerHTML = (off ? TAB_PLAY_ICON : TAB_PAUSE_ICON) + '<span>' + (off ? 'Continuar troca automática' : 'Pausar troca automática') + '</span>';
+    toggleEl.setAttribute('aria-pressed', off ? 'true' : 'false');
+  }
+  function applyMotion(){
+    var reduce = !!(tabRM && tabRM.matches);
+    tabsEl.classList.toggle('is-manual', reduce); // só seleção manual
+    toggleEl.hidden = reduce;
+  }
+
+  tabsEl.addEventListener('animationend', function(e){
+    if (e.animationName !== 'tab-fill' || !e.target.closest('.tab.is-active')) return;
+    setActive((active + 1) % SCENES.length);
+  });
+  toggleEl.addEventListener('click', function(){ setTabPause('user', !tabPause.user); paintToggle(); });
+
+  // mouse sobre as abas ou o conteúdo: pausa para ler com calma
+  [tabsEl, bodyEl].forEach(function(el){
+    el.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') setTabPause('hover', true); });
+    el.addEventListener('pointerleave', function(e){ if (e.pointerType === 'mouse') setTabPause('hover', false); });
+  });
+  // interação por teclado nas abas
+  tabsEl.addEventListener('focusin', function(e){
+    var kb = true; try { kb = e.target.matches(':focus-visible'); } catch (err) {}
+    if (kb) setTabPause('focus', true);
+  });
+  tabsEl.addEventListener('focusout', function(e){ if (!e.relatedTarget || !tabsEl.contains(e.relatedTarget)) setTabPause('focus', false); });
+  document.addEventListener('visibilitychange', function(){ setTabPause('hidden', document.hidden); });
+  if (tabRM) { if (tabRM.addEventListener) tabRM.addEventListener('change', applyMotion); else if (tabRM.addListener) tabRM.addListener(applyMotion); }
+  if ('IntersectionObserver' in window) {
+    // desktop: conta enquanto a seção estiver na tela. celular/tablet: enquanto alguma parte
+    // da barra de abas estiver visível (abaixo do cabeçalho fixo), para não trocar a cena
+    // quando a pessoa já rolou para ler a parte de baixo.
+    var visStage = false, visTabs = false;
+    var updateVis = function(){ setTabPause('offscreen', !((deskMQ && deskMQ.matches) ? visStage : visTabs)); };
+    var visIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(x){ if (x.target === stageEl) visStage = x.isIntersecting; else visTabs = x.isIntersecting; });
+      updateVis();
+    }, { rootMargin:'-58px 0px -15% 0px' });
+    visIO.observe(stageEl); visIO.observe(tabsEl);
+    if (deskMQ) { if (deskMQ.addEventListener) deskMQ.addEventListener('change', updateVis); else if (deskMQ.addListener) deskMQ.addListener(updateVis); }
+    new IntersectionObserver(function(entries, obs){
+      if (entries.some(function(x){ return x.isIntersecting; })) { preloadShots(); obs.disconnect(); }
+    }, { rootMargin:'800px 0px' }).observe(stageEl);
+  } else {
+    setTabPause('offscreen', false); preloadShots();
+  }
+  applyMotion(); paintToggle(); applyTabPause();
 
   /* ---------- faq accordion ---------- */
   Array.prototype.forEach.call(document.querySelectorAll('.faq-q'), function(btn){
