@@ -328,6 +328,64 @@ main{padding-top:59px}
 }
 </style>
 <script>document.documentElement.classList.add('reveal-on');</script>
+
+<!-- Google tag (gtag.js) — Google Ads AW-18411566741 + conversão "Clique para baixar Orodim" nos botões das lojas -->
+<script>
+(function(){
+  "use strict";
+  if (window.__orodimAdsTag) return; // evita instalação/handlers duplicados
+  window.__orodimAdsTag = true;
+
+  var ADS_ID = 'AW-18411566741';
+  var CONVERSION = 'AW-18411566741/OyZeCMT80Y4dEJXtqMtE';
+  var gtagLoaded = false;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', ADS_ID);
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ADS_ID;
+  s.onload = function(){ gtagLoaded = true; };
+  document.head.appendChild(s);
+
+  // Delegado no document: cobre os botões dos dois blocos (#storesHero e #storesCta) e
+  // lê o href no momento do clique, preservando o OneLink gerado pelo Smart Script do AppsFlyer.
+  var navigating = false;
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a.store[href]') : null;
+    if (!a || e.defaultPrevented) return;
+    if (navigating) { e.preventDefault(); return; } // clique repetido durante o envio: não duplica
+
+    var url = a.href;
+    var params = { send_to: CONVERSION, value: 1, currency: 'BRL' };
+    var newTab = (a.target && a.target !== '_self') || e.button !== 0 ||
+                 e.ctrlKey || e.metaKey || e.shiftKey || e.altKey;
+
+    // Nova aba / teclas modificadoras ou tag bloqueada: navegação nativa do navegador.
+    if (newTab || !gtagLoaded || typeof window.gtag !== 'function') {
+      try { if (typeof window.gtag === 'function') window.gtag('event', 'conversion', params); } catch (err) {}
+      return;
+    }
+
+    e.preventDefault();
+    navigating = true;
+    var done = false;
+    function go(){
+      if (done) return;
+      done = true;
+      window.location.href = url;
+      setTimeout(function(){ navigating = false; }, 1000); // libera caso a página continue aberta (ex.: deep link do app)
+    }
+    params.event_callback = go;
+    params.event_timeout = 800;
+    try { window.gtag('event', 'conversion', params); } catch (err) { go(); return; }
+    setTimeout(go, 800);
+  });
+})();
+</script>
 </head>
 <body>
 
