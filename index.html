@@ -162,6 +162,8 @@ main{padding-top:59px}
 .note-num-m{margin-top:3px; flex:0 0 auto; border:1px solid rgba(63,185,138,.4); padding:1px 6px; font-family:var(--mono); font-size:.58rem; letter-spacing:.12em; color:var(--green)}
 .note-num-d{display:none; font-family:var(--mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.2em; color:var(--green)}
 .note p{font-size:.9rem; line-height:1.7; color:rgba(237,243,250,.8)}
+.note .note-title{font-size:.98rem; font-weight:600; line-height:1.35; letter-spacing:-.01em; color:var(--bone)}
+.note .note-title + p{margin-top:4px}
 .note-line{display:none}
 @media(min-width:1024px){
   .note-num-m{display:none}
@@ -267,6 +269,7 @@ main{padding-top:59px}
 .level-code{margin-top:16px; font-size:1.5rem; font-weight:600; line-height:1; letter-spacing:-.01em}
 .level-label{margin-top:8px; display:block}
 .level-note{margin-top:12px; font-size:.8rem; line-height:1.35; color:var(--mist)}
+.levels-lead{margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)}
 .levels-note{margin:48px auto 0; max-width:68ch; font-size:.96rem; line-height:1.8; color:var(--mist)}
 
 /* ---------- pricing ---------- */
@@ -313,6 +316,23 @@ main{padding-top:59px}
 .cta-store-box{width:100%; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:32px 0}
 .cta-store-note{margin-top:20px; font-size:.86rem; color:var(--mist)}
 .cta-phone{margin:64px auto 0; max-width:280px}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line); border-bottom:0}
+.faq-inner{max-width:var(--prose); margin:0 auto}
+.faq h2{margin:24px auto 0; max-width:24ch; text-align:center; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em}
+.faq-list{margin-top:48px; border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item h3{font-size:inherit; font-weight:inherit}
+.faq-q{width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0; background:none; border:0; color:var(--bone); font-family:var(--sans); font-size:1rem; font-weight:600; line-height:1.4; text-align:left; cursor:pointer; transition:color .2s var(--ease)}
+.faq-q:hover{color:var(--green)}
+.faq-icon{position:relative; flex:0 0 auto; width:14px; height:14px}
+.faq-icon::before,.faq-icon::after{content:""; position:absolute; top:50%; left:0; width:14px; height:2px; margin-top:-1px; background:var(--green); transition:transform .2s var(--ease)}
+.faq-icon::after{transform:rotate(90deg)}
+.faq-q[aria-expanded="true"]{color:var(--green)}
+.faq-q[aria-expanded="true"] .faq-icon::after{transform:rotate(0deg)}
+.faq-a{padding:0 32px 22px 0}
+.faq-a p{font-size:.95rem; line-height:1.75; color:var(--mist)}
 
 /* ---------- scroll reveal ---------- */
 .reveal-on .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); transition-delay:var(--reveal-d,0s); will-change:opacity,transform}
@@ -424,13 +444,13 @@ main{padding-top:59px}
   <section class="section hero">
     <div class="section-inner">
       <span class="mono mono--green reveal">Orodim · inglês com IA</span>
-      <h1 class="reveal" style="--reveal-d:.08s">Seu inglês em prática. Seu progresso à vista.</h1>
-      <p class="hero-lead reveal" style="--reveal-d:.16s">Escrita, pronúncia, listening e conversação com feedback por IA, revisão dos seus erros e evolução acompanhada do A1 ao C2.</p>
+      <h1 class="reveal" style="--reveal-d:.08s">Na hora de falar inglês, as palavras somem?</h1>
+      <p class="hero-lead reveal" style="--reveal-d:.16s">Treine conversas por voz e receba correções na escrita e na pronúncia. No Orodim, seus próprios erros viram atividades para você continuar evoluindo.</p>
 
       <div class="flank flank--hero">
         <div class="col-left reveal reveal--left" style="--reveal-d:.24s">
-          <div class="note note--left"><span class="note-num-m">01</span><div class="note-body"><span class="note-num-d">01</span><p>Escolha o que praticar hoje.</p></div><span class="note-line"></span></div>
-          <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p>Continue do ponto certo do seu nível.</p></div><span class="note-line"></span></div>
+          <div class="note note--left"><span class="note-num-m">01</span><div class="note-body"><span class="note-num-d">01</span><p class="note-title">Mais prática para conversar</p><p>Treine conversas por voz com uma tutora de IA.</p></div><span class="note-line"></span></div>
+          <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p class="note-title">Saiba onde melhorar sua pronúncia</p><p>Descubra quais palavras precisam de mais atenção.</p></div><span class="note-line"></span></div>
         </div>
         <div class="col-phone reveal reveal--scale" style="--reveal-d:.12s">
           <figure class="phone">
@@ -441,13 +461,13 @@ main{padding-top:59px}
           </figure>
         </div>
         <div class="col-right reveal reveal--right" style="--reveal-d:.24s">
-          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">03</span><div class="note-body"><span class="note-num-d">03</span><p>Acompanhe sua sequência de estudos.</p></div></div>
-          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p>Veja sua próxima prática recomendada.</p></div></div>
+          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">03</span><div class="note-body"><span class="note-num-d">03</span><p class="note-title">Entenda os erros da sua escrita</p><p>Veja as correções e as explicações para melhorar seu texto.</p></div></div>
+          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p class="note-title">Transforme seus erros em aprendizado</p><p>Pratique novamente os pontos em que você teve dificuldade.</p></div></div>
         </div>
       </div>
 
       <div class="hero-actions reveal" style="--reveal-d:.12s">
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">sem plano anual · cancele quando quiser</span></p>
+        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">Planos a partir de R$ 34,90/mês · cancele quando quiser</span></p>
         <div class="stores center" id="storesHero"></div>
       </div>
     </div>
@@ -457,8 +477,8 @@ main{padding-top:59px}
   <section class="section" id="recursos">
     <div class="section-inner" style="max-width:1180px">
       <div class="stage-head reveal">
-        <h2>Veja o Orodim em ação</h2>
-        <p>Escolha uma prática e explore como ela funciona.</p>
+        <h2>Veja como o Orodim ajuda você a melhorar</h2>
+        <p>Da conversa por voz à correção dos seus textos: explore o que você pode praticar.</p>
       </div>
       <div class="tabs reveal" style="--reveal-d:.1s" id="tabs" role="tablist" aria-label="Práticas do Orodim"></div>
       <div class="stage-body" id="stageBody"></div>
@@ -469,8 +489,8 @@ main{padding-top:59px}
   <section class="section" id="rotina">
     <div class="section-inner center">
       <span class="mono mono--green reveal">Consistência</span>
-      <h2 class="reveal" style="--reveal-d:.08s; margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em">Transforme prática em rotina</h2>
-      <p class="reveal" style="--reveal-d:.16s; margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)">Veja o que você praticou em cada dia e acompanhe sua consistência ao longo do tempo.</p>
+      <h2 class="reveal" style="--reveal-d:.08s; margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em">Fica mais fácil continuar quando você vê seu progresso</h2>
+      <p class="reveal" style="--reveal-d:.16s; margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)">Acompanhe os dias em que praticou e retome de onde parou.</p>
 
       <div class="flank flank--routine" style="margin-top:48px">
         <div class="col-left reveal reveal--left">
@@ -497,7 +517,8 @@ main{padding-top:59px}
   <section class="section" id="niveis">
     <div class="section-inner levels">
       <span class="mono mono--green reveal">Progressão</span>
-      <h2 class="reveal" style="--reveal-d:.08s">Do A1 ao C2, um passo de cada vez</h2>
+      <h2 class="reveal" style="--reveal-d:.08s">Pratique a partir do que você já sabe</h2>
+      <p class="levels-lead reveal" style="--reveal-d:.12s">Começando agora ou buscando mais precisão? Encontre atividades adequadas ao seu nível.</p>
       <div class="path reveal" style="--reveal-d:.16s" id="path">
         <div class="path-track"><span class="path-fill"></span></div>
         <div class="levels-grid">
@@ -595,10 +616,10 @@ main{padding-top:59px}
   <section class="section cta" id="download">
     <div class="section-inner">
       <span class="mono mono--green reveal">Comece agora</span>
-      <h2 class="reveal" style="--reveal-d:.08s">Bora falar inglês de verdade?</h2>
-      <p class="cta-copy reveal" style="--reveal-d:.16s">Baixe o Orodim e comece a praticar inglês no seu nível.</p>
+      <h2 class="reveal" style="--reveal-d:.08s">Sua primeira conversa em inglês pode começar hoje.</h2>
+      <p class="cta-copy reveal" style="--reveal-d:.16s">Baixe o Orodim e pratique por voz com uma tutora de IA, no seu nível.</p>
       <div class="cta-actions reveal" style="--reveal-d:.24s">
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">sem plano anual · cancele quando quiser</span></p>
+        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Experimente 7 dias grátis</strong></span><span class="trial-sub">Planos a partir de R$ 34,90/mês · cancele quando quiser</span></p>
         <div class="cta-store-box">
           <span class="mono" style="display:block">Escolha a sua loja</span>
           <div class="stores center" id="storesCta" style="margin-top:20px"></div>
@@ -612,6 +633,51 @@ main{padding-top:59px}
         </div></div>
         <figcaption class="phone-cap">conversação por voz com a tutora de IA</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" id="faq">
+    <div class="faq-inner">
+      <h2 class="reveal">Antes de começar, tire suas dúvidas</h2>
+      <div class="faq-list reveal" style="--reveal-d:.08s">
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1"><span>O que posso praticar no Orodim?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Você pode praticar escrita, pronúncia, compreensão de áudio e conversação por voz com uma tutora de IA. Também pode revisar seus próprios erros e acompanhar sua evolução.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span>O Orodim serve para quem está começando?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Sim. O Orodim oferece atividades do A1 ao C2, com práticas adequadas a diferentes níveis de inglês, do iniciante ao avançado.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"><span>Como funciona a análise da minha pronúncia?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Você grava sua voz e recebe uma análise palavra por palavra, mostrando quais foram bem pronunciadas e quais precisam de mais atenção. Depois, pode ouvir o modelo e praticar novamente.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q4" aria-expanded="false" aria-controls="faq-a4"><span>Posso conversar por voz com a IA?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>Sim. Você pode conversar por voz em tempo real com uma tutora de IA, escolhendo entre conversa guiada ou livre. Os minutos disponíveis dependem do seu plano.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5"><span>Como funciona a revisão dos meus erros?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Pontos identificados nas suas atividades de escrita podem voltar em exercícios de revisão. Assim, você pratica novamente aquilo em que teve dificuldade e recebe feedback sobre sua resposta.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6"><span>Como funciona o teste grátis?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>O teste grátis dura 7 dias, no iPhone e no Android, e começa automaticamente quando você cria sua conta. Para começar, não é preciso assinar um plano nem informar forma de pagamento. Durante o teste, você pode fazer uma prática de escrita, uma de pronúncia e uma de listening por dia, e tem 15 minutos de conversação por voz no total. O teste não vira uma assinatura sozinho: quando ele termina, você escolhe um plano no aplicativo para continuar praticando, e seus dados e seu progresso são mantidos.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q7" aria-expanded="false" aria-controls="faq-a7"><span>Quanto custa o Orodim?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden><p>O plano Essencial custa R$ 34,90 por mês e o Plus custa R$ 59,90 por mês. Você pode comparar o que está incluído em cada plano nesta página e contratar pelo aplicativo.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q8" aria-expanded="false" aria-controls="faq-a8"><span>Posso cancelar quando quiser?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8" hidden><p>Sim. Os planos são mensais e você pode cancelar a renovação pelo gerenciamento de assinaturas da loja em que contratou.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" id="faq-q9" aria-expanded="false" aria-controls="faq-a9"><span>Preciso estar conectado à internet?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9" hidden><p>Sim. As análises e a conversação com IA precisam de conexão com a internet.</p></div>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -695,22 +761,22 @@ main{padding-top:59px}
 
   /* ---------- interactive practice viewer ---------- */
   var SCENES = [
-    { tab:'Escrita', headline:'Uma missão para colocar seu inglês em prática',
-      copy:'Escreva em inglês a partir de uma proposta adequada ao seu nível e receba uma análise detalhada da sua resposta, com nota geral, desempenho por habilidade, explicações e uma versão corrigida para comparar.',
-      notes:['Missão alinhada ao seu nível atual.','Orientação clara para começar a escrever.','Escreva livremente em inglês.','Envie quando quiser receber a análise da IA.','Avaliação de gramática, vocabulário, naturalidade e fluência.','Compare seu texto com a versão corrigida.','Entenda os pontos que merecem mais atenção.','Erros importantes podem voltar em Revisar meus erros.'],
-      shots:[{src:'/assets/img/seu-texto-ingles.webp', w:500, h:1113, alt:'Tela de escrita em inglês no Orodim'},{src:'/assets/img/hero-relatorio-professor.webp', w:500, h:1105, alt:'Análise da escrita com nota geral e desempenho por habilidade'}] },
-    { tab:'Pronúncia', headline:'Descubra exatamente o que melhorar',
-      copy:'Grave sua voz e veja, palavra por palavra, o que está bom e o que ainda precisa de prática.',
-      notes:['Análise palavra por palavra.','Veja rapidamente onde concentrar sua prática.','Ouça o modelo e tente novamente.','Repita as palavras que precisam de mais atenção.'],
+    { tab:'Pronúncia', headline:'Veja, palavra por palavra, onde melhorar sua pronúncia.',
+      copy:'Grave sua voz e descubra quais palavras você pronunciou bem e quais precisam de mais prática. Ouça o modelo e tente novamente.',
+      notes:['Análise palavra por palavra.','Identifique as palavras que precisam de mais prática.','Ouça o modelo e tente novamente.','Repita as palavras que precisam de mais atenção.'],
       shots:[{src:'/assets/img/leitura-palavra-por-palavra.webp', w:540, h:1180, alt:'Leitura analisada palavra por palavra'},{src:'/assets/img/resultado-pronuncia.webp', w:500, h:1121, alt:'Resultado da pronúncia com as palavras para praticar'}] },
-    { tab:'Listening', headline:'Treine seu ouvido sem ficar perdido',
-      copy:'Ouça histórias adequadas ao seu nível, acompanhe a transcrição quando precisar e teste o que entendeu.',
-      notes:['Histórias em inglês adequadas ao seu nível.','Controle a velocidade do áudio.','Consulte transcrição e tradução quando precisar.','Responda perguntas para testar sua compreensão.'],
-      shots:[{src:'/assets/img/listening-historia.webp', w:556, h:1222, alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/listening-audio.webp', w:546, h:1212, alt:'Player de listening com controle de velocidade, transcrição e reouvir com legenda'}] },
     { tab:'Conversação', headline:'Converse em inglês de verdade',
       copy:'Pratique por voz com uma tutora de IA em tempo real. Escolha entre conversa guiada ou livre e personalize a experiência do tutor.',
       notes:['Converse por voz em tempo real.','Use legendas quando quiser.','Personalize voz e estilo do tutor.','Escolha como quer conduzir a conversa.'],
       shots:[{src:'/assets/img/hero-conversa-voz.webp', w:480, h:1015, alt:'Conversa por voz com a tutora de IA'}] },
+    { tab:'Escrita', headline:'Uma missão para colocar seu inglês em prática',
+      copy:'Escreva em inglês a partir de uma proposta adequada ao seu nível e receba uma análise detalhada da sua resposta, com nota geral, desempenho por habilidade, explicações e uma versão corrigida para comparar.',
+      notes:['Missão alinhada ao seu nível atual.','Orientação clara para começar a escrever.','Escreva livremente em inglês.','Envie quando quiser receber a análise da IA.','Avaliação de gramática, vocabulário, naturalidade e fluência.','Compare seu texto com a versão corrigida.','Entenda os pontos que merecem mais atenção.','Erros importantes podem voltar em Revisar meus erros.'],
+      shots:[{src:'/assets/img/seu-texto-ingles.webp', w:500, h:1113, alt:'Tela de escrita em inglês no Orodim'},{src:'/assets/img/hero-relatorio-professor.webp', w:500, h:1105, alt:'Análise da escrita com nota geral e desempenho por habilidade'}] },
+    { tab:'Listening', headline:'Treine seu ouvido sem ficar perdido',
+      copy:'Ouça histórias adequadas ao seu nível, acompanhe a transcrição quando precisar e teste o que entendeu.',
+      notes:['Histórias em inglês adequadas ao seu nível.','Controle a velocidade do áudio.','Consulte transcrição e tradução quando precisar.','Responda perguntas para testar sua compreensão.'],
+      shots:[{src:'/assets/img/listening-historia.webp', w:556, h:1222, alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/listening-audio.webp', w:546, h:1212, alt:'Player de listening com controle de velocidade, transcrição e reouvir com legenda'}] },
     { tab:'Revisar meus erros', headline:'Seus erros não terminam na correção',
       copy:'O que merece mais atenção volta em atividades de revisão para você tentar novamente até dominar.',
       notes:['Veja o erro que você realmente cometeu.','Tente escrever a forma correta.','Receba feedback logo após responder.','Continue revisando os pontos que ainda precisam de prática.'],
@@ -719,6 +785,7 @@ main{padding-top:59px}
       copy:'Acompanhe seu desempenho ao longo do tempo, compare habilidades e veja como sua escrita está evoluindo.',
       notes:['Gramática, vocabulário, naturalidade e fluência separadamente.','Compare diferentes períodos.','Acompanhe notas e avaliações ao longo do tempo.','Veja sua evolução sempre que quiser.'],
       shots:[{src:'/assets/img/evolucao-tela.webp', w:480, h:1040, alt:'Tela de evolução com desempenho por habilidade'}] }
+
   ];
 
   function pad(n){ return String(n).padStart(2,'0'); }
@@ -794,6 +861,15 @@ main{padding-top:59px}
 
   buildTabs();
   bodyEl.innerHTML = sceneHTML(SCENES[0]);
+
+  /* ---------- faq accordion ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.faq-q'), function(btn){
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.getElementById(btn.getAttribute('aria-controls')).hidden = !open;
+    });
+  });
 
   /* ---------- levels progress fill on scroll ---------- */
   var path = document.getElementById('path');
