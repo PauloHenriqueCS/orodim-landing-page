@@ -338,7 +338,6 @@ main{padding-top:59px}
 
   var ADS_ID = 'AW-18411566741';
   var CONVERSION = 'AW-18411566741/OyZeCMT80Y4dEJXtqMtE';
-  var gtagLoaded = false;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
@@ -348,7 +347,6 @@ main{padding-top:59px}
   var s = document.createElement('script');
   s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ADS_ID;
-  s.onload = function(){ gtagLoaded = true; };
   document.head.appendChild(s);
 
   // Delegado no document: cobre os botões dos dois blocos (#storesHero e #storesCta) e
@@ -364,8 +362,8 @@ main{padding-top:59px}
     var newTab = (a.target && a.target !== '_self') || e.button !== 0 ||
                  e.ctrlKey || e.metaKey || e.shiftKey || e.altKey;
 
-    // Nova aba / teclas modificadoras ou tag bloqueada: navegação nativa do navegador.
-    if (newTab || !gtagLoaded || typeof window.gtag !== 'function') {
+    // Nova aba / teclas modificadoras: navegação nativa do navegador.
+    if (newTab || typeof window.gtag !== 'function') {
       try { if (typeof window.gtag === 'function') window.gtag('event', 'conversion', params); } catch (err) {}
       return;
     }
@@ -380,9 +378,9 @@ main{padding-top:59px}
       setTimeout(function(){ navigating = false; }, 1000); // libera caso a página continue aberta (ex.: deep link do app)
     }
     params.event_callback = go;
-    params.event_timeout = 800;
+    params.event_timeout = 2000;
     try { window.gtag('event', 'conversion', params); } catch (err) { go(); return; }
-    setTimeout(go, 800);
+    setTimeout(go, 2000); // fallback: tag bloqueada ou sem callback
   });
 })();
 </script>
