@@ -59,23 +59,7 @@
       "inLanguage": "pt-BR",
       "url": "https://www.orodim.com.br/",
       "description": "Aplicativo de ensino de inglês com IA que adapta escrita, pronúncia, listening e conversação ao nível do aluno, com revisão dos erros e progressão do A1 ao C2.",
-      "publisher": { "@id": "https://www.orodim.com.br/#organization" },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Essencial",
-          "price": "34.90",
-          "priceCurrency": "BRL",
-          "category": "subscription"
-        },
-        {
-          "@type": "Offer",
-          "name": "Plus",
-          "price": "59.90",
-          "priceCurrency": "BRL",
-          "category": "subscription"
-        }
-      ]
+      "publisher": { "@id": "https://www.orodim.com.br/#organization" }
     }
   ]
 }
@@ -201,7 +185,7 @@ main{padding-top:59px}
 @media(min-width:1024px){ .flank--auto{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)} }
 .flank--routine{max-width:1000px}
 @media(min-width:1024px){ .flank--routine{grid-template-columns:minmax(0,1fr) 290px minmax(0,1fr)} }
-.flank--hero{max-width:1000px; margin-top:48px}
+.flank--hero{max-width:1000px; margin-top:44px}
 
 /* ---------- hero ---------- */
 /* demo: benefícios clicáveis ligados às telas do celular */
@@ -221,9 +205,21 @@ main{padding-top:59px}
 .hero-screen .hero-shot.is-active{opacity:1}
 
 .hero{text-align:center}
-.hero h1{margin:32px auto 0; max-width:26ch; font-size:clamp(2.1rem,5vw,3.9rem); font-weight:600; line-height:1.02; letter-spacing:-.035em}
-.hero-lead{margin:28px auto 0; max-width:62ch; font-size:1rem; line-height:1.8; color:var(--mist)}
-.hero-actions{margin-top:56px; display:flex; flex-direction:column; align-items:center; gap:24px}
+.section.hero{padding-top:32px}
+@media(min-width:768px){ .section.hero{padding-top:48px} }
+.hero h1{margin:20px auto 0; max-width:26ch; font-size:clamp(2.1rem,5vw,3.9rem); font-weight:600; line-height:1.02; letter-spacing:-.035em}
+.hero-lead{margin:18px auto 0; max-width:62ch; font-size:1rem; line-height:1.8; color:var(--mist)}
+/* subtítulo digitado: frases invisíveis empilhadas reservam a altura da maior em qualquer largura */
+.hero-typing{max-width:44ch; font-size:1.05rem; line-height:1.6}
+@media(min-width:768px){ .hero-typing{max-width:62ch; font-size:1.15rem} }
+.typing-stage{display:grid}
+.typing-ghost,.typing-live{grid-area:1/1}
+.typing-ghost{visibility:hidden}
+.typing-live{color:rgba(237,243,250,.86)}
+.typing-cursor{display:inline-block; width:2px; height:1.05em; margin-left:3px; vertical-align:-.15em; background:var(--green); animation:typing-blink 1s steps(1) infinite}
+.hero-typing.is-typing .typing-live .typing-cursor{animation:none}
+@keyframes typing-blink{50%{opacity:0}}
+.hero-actions{margin-top:28px; display:flex; flex-direction:column; align-items:center; gap:16px}
 
 /* trial badge */
 .trial{display:inline-flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:4px 12px; border:1px solid rgba(63,185,138,.45); background:rgba(63,185,138,.10); padding:12px 20px; text-align:center}
@@ -378,6 +374,7 @@ main{padding-top:59px}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important; scroll-behavior:auto!important}
   .stage-body,.path-fill,.hero-shot{transition:none!important}
+  .typing-live .typing-cursor{display:none}
   .tab.is-active .tab-fill{transform:none}
   .reveal-on .reveal{opacity:1!important; transform:none!important; transition:none!important}
 }
@@ -449,7 +446,6 @@ main{padding-top:59px}
       <a href="#recursos">Recursos</a>
       <a href="#rotina">Rotina</a>
       <a href="#niveis">Níveis</a>
-      <a href="#preco">Preço</a>
     </nav>
     <div class="hdr-right">
       <a class="hdr-cta" href="#download">Baixe o app</a>
@@ -463,7 +459,6 @@ main{padding-top:59px}
     <a href="#recursos" onclick="closeMenu()">Recursos</a>
     <a href="#rotina" onclick="closeMenu()">Rotina</a>
     <a href="#niveis" onclick="closeMenu()">Níveis</a>
-    <a href="#preco" onclick="closeMenu()">Preço</a>
     <a href="/support" onclick="closeMenu()">Suporte</a>
     <a href="/contact" onclick="closeMenu()">Contato</a>
     <a href="/privacy" onclick="closeMenu()">Política de Privacidade</a>
@@ -480,7 +475,15 @@ main{padding-top:59px}
     <div class="section-inner">
       <span class="mono mono--green reveal">Orodim · inglês com IA</span>
       <h1 class="reveal" style="--reveal-d:.08s">Na hora de falar inglês, as palavras somem?</h1>
-      <p class="hero-lead reveal" style="--reveal-d:.16s">Treine conversas por voz e receba correções na escrita e na pronúncia. No Orodim, seus próprios erros viram atividades para você continuar evoluindo.</p>
+      <p class="hero-lead hero-typing reveal" style="--reveal-d:.16s" id="heroTyping">
+        <span class="visually-hidden">Converse em inglês com uma IA, sem medo de errar. Descubra quais palavras você precisa praticar na pronúncia. Entenda os erros da sua escrita e como corrigir. Treine seu ouvido com histórias no seu nível. Transforme seus próprios erros em novas práticas.</span>
+        <span class="typing-stage" aria-hidden="true"><span class="typing-ghost">Converse em inglês com uma IA, sem medo de errar.<span class="typing-cursor"></span></span><span class="typing-ghost">Descubra quais palavras você precisa praticar na pronúncia.<span class="typing-cursor"></span></span><span class="typing-ghost">Entenda os erros da sua escrita e como corrigir.<span class="typing-cursor"></span></span><span class="typing-ghost">Treine seu ouvido com histórias no seu nível.<span class="typing-cursor"></span></span><span class="typing-ghost">Transforme seus próprios erros em novas práticas.<span class="typing-cursor"></span></span><span class="typing-live"><span class="typing-text">Converse em inglês com uma IA, sem medo de errar.</span><span class="typing-cursor"></span></span></span>
+      </p>
+
+      <div class="hero-actions reveal" style="--reveal-d:.2s">
+        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Experimente grátis</strong></span></p>
+        <div class="stores center" id="storesHero"></div>
+      </div>
 
       <div class="flank flank--hero" id="heroDemo">
         <div class="col-left reveal reveal--left" style="--reveal-d:.24s">
@@ -502,11 +505,6 @@ main{padding-top:59px}
           <button type="button" class="note note--right hero-benefit" data-i="2" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">03</span><span class="note-body"><span class="note-num-d">03</span><span class="note-title">Entenda melhor o inglês que você ouve</span><span class="note-text">Ouça histórias no seu nível e teste o que entendeu, com transcrição e tradução quando precisar.</span></span></button>
           <button type="button" class="note note--right hero-benefit" data-i="3" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">04</span><span class="note-body"><span class="note-num-d">04</span><span class="note-title">Entenda os erros da sua escrita</span><span class="note-text">Veja as correções e as explicações para melhorar seu texto.</span></span></button>
         </div>
-      </div>
-
-      <div class="hero-actions reveal" style="--reveal-d:.12s">
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">Planos a partir de R$ 34,90/mês · cancele quando quiser</span></p>
-        <div class="stores center" id="storesHero"></div>
       </div>
     </div>
   </section>
@@ -573,84 +571,6 @@ main{padding-top:59px}
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="section" id="preco">
-    <div class="pricing-inner">
-      <div class="pricing-head reveal">
-        <h2>Dois planos, mês a mês</h2>
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Teste 7 dias grátis</strong></span><span class="trial-sub">sem plano anual · cancele quando quiser</span></p>
-      </div>
-
-      <!-- mobile stacked -->
-      <div class="plans-mobile">
-        <div class="plan reveal">
-          <div class="plan-top"><span class="mono">Essencial</span></div>
-          <p class="plan-price">R$ 34<span class="cents">,90</span><span class="per">/mês</span></p>
-          <p class="plan-sub">Para manter uma rotina diária.</p>
-          <ul class="plan-list">
-            <li><span class="mono">Escrita</span><span class="val">1 por dia</span></li>
-            <li><span class="mono">Pronúncia</span><span class="val">1 análise por dia</span></li>
-            <li><span class="mono">Listening</span><span class="val">1 por dia</span></li>
-            <li><span class="mono">Revisão</span><span class="val">1 por dia</span></li>
-            <li><span class="mono">Conversação</span><span class="val">30 min/mês</span></li>
-          </ul>
-          <a href="#download" class="btn btn-ghost plan-btn">Baixe o app</a>
-        </div>
-        <div class="plan featured reveal" style="--reveal-d:.1s">
-          <div class="plan-top"><span class="mono">Plus</span><span class="mono mono--green">mais completo</span></div>
-          <p class="plan-price">R$ 59<span class="cents">,90</span><span class="per">/mês</span></p>
-          <p class="plan-sub">Para praticar mais vezes ao longo do dia.</p>
-          <ul class="plan-list">
-            <li><span class="mono">Escrita</span><span class="val">Até 3 por dia</span></li>
-            <li><span class="mono">Pronúncia</span><span class="val">Até 3 análises por dia</span></li>
-            <li><span class="mono">Listening</span><span class="val">Até 3 por dia</span></li>
-            <li><span class="mono">Revisão</span><span class="val">Até 3 por dia</span></li>
-            <li><span class="mono">Conversação</span><span class="val">70 min/mês</span></li>
-          </ul>
-          <a href="#download" class="btn btn-primary plan-btn">Baixe o app</a>
-        </div>
-      </div>
-
-      <!-- desktop comparison table -->
-      <div class="plans-table-wrap reveal">
-        <table class="plans-table">
-          <thead>
-            <tr>
-              <th scope="col" class="th-first"><span class="mono">Recurso</span></th>
-              <th scope="col">
-                <span class="mono">Essencial</span>
-                <p class="col-price">R$ 34<span class="cents">,90</span><span class="per">/mês</span></p>
-                <p class="col-sub">Para manter uma rotina diária.</p>
-              </th>
-              <th scope="col" class="feat">
-                <span class="mono">Plus</span>
-                <p class="col-price">R$ 59<span class="cents">,90</span><span class="per">/mês</span></p>
-                <p class="col-sub">Para praticar mais vezes ao longo do dia.</p>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row"><span class="mono">Escrita</span></th><td>1 por dia</td><td class="feat">Até 3 por dia</td></tr>
-            <tr><th scope="row"><span class="mono">Pronúncia</span></th><td>1 análise por dia</td><td class="feat">Até 3 análises por dia</td></tr>
-            <tr><th scope="row"><span class="mono">Listening</span></th><td>1 por dia</td><td class="feat">Até 3 por dia</td></tr>
-            <tr><th scope="row"><span class="mono">Revisão</span></th><td>1 por dia</td><td class="feat">Até 3 por dia</td></tr>
-            <tr><th scope="row"><span class="mono">Conversação</span></th><td>30 min/mês</td><td class="feat">70 min/mês</td></tr>
-            <tr class="btn-row">
-              <td></td>
-              <td><a href="#download" class="btn btn-ghost">Baixar o app</a></td>
-              <td><a href="#download" class="btn btn-primary">Baixar o app</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="pricing-fine">
-        <span class="mono">Cobrança mensal · cancele quando quiser</span>
-        <span class="mono">Escolha e assine seu plano diretamente pelo aplicativo Orodim.</span>
-      </div>
-    </div>
-  </section>
-
   <!-- FINAL CTA -->
   <section class="section cta" id="download">
     <div class="section-inner cta-grid">
@@ -659,7 +579,7 @@ main{padding-top:59px}
       <h2 class="reveal" style="--reveal-d:.08s">Sua primeira conversa em inglês pode começar hoje.</h2>
       <p class="cta-copy reveal" style="--reveal-d:.16s">Baixe o Orodim e pratique por voz com uma tutora de IA, no seu nível.</p>
       <div class="cta-actions reveal" style="--reveal-d:.24s">
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Experimente 7 dias grátis</strong></span><span class="trial-sub">Planos a partir de R$ 34,90/mês · cancele quando quiser</span></p>
+        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Experimente grátis</strong></span></p>
         <div class="cta-store-box">
           <span class="mono" style="display:block">Escolha a sua loja</span>
           <div class="stores center" id="storesCta" style="margin-top:20px"></div>
@@ -704,11 +624,11 @@ main{padding-top:59px}
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6"><span>Como funciona o teste grátis?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>O teste grátis dura 7 dias, no iPhone e no Android, e começa automaticamente quando você cria sua conta. Para começar, não é preciso assinar um plano nem informar forma de pagamento. Durante o teste, você pode fazer uma prática de escrita, uma de pronúncia e uma de listening por dia, e tem 15 minutos de conversação por voz no total. O teste não vira uma assinatura sozinho: quando ele termina, você escolhe um plano no aplicativo para continuar praticando, e seus dados e seu progresso são mantidos.</p></div>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>O teste grátis dura 7 dias, no iPhone e no Android, e começa automaticamente quando você cria sua conta. Para começar, não é preciso assinar um plano nem informar forma de pagamento. Durante o teste, você pode fazer uma prática de escrita, uma de pronúncia e uma de listening por dia, e tem 15 minutos de conversação por voz no total. O teste não vira uma assinatura sozinho: quando ele termina, para continuar praticando é preciso assinar um plano pelo aplicativo. Seus dados e seu progresso são mantidos.</p></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q7" aria-expanded="false" aria-controls="faq-a7"><span>Quanto custa o Orodim?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden><p>O plano Essencial custa R$ 34,90 por mês e o Plus custa R$ 59,90 por mês. Você pode comparar o que está incluído em cada plano nesta página e contratar pelo aplicativo.</p></div>
+          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden><p>Você começa com o teste grátis de 7 dias. Para continuar praticando depois dele, é preciso assinar um plano mensal pelo aplicativo, onde você vê os planos disponíveis, o que cada um inclui e os valores antes de contratar.</p></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q8" aria-expanded="false" aria-controls="faq-a8"><span>Posso cancelar quando quiser?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
@@ -735,7 +655,6 @@ main{padding-top:59px}
         <a href="/#recursos">Recursos</a>
         <a href="/#rotina">Rotina</a>
         <a href="/#niveis">Níveis</a>
-        <a href="/#preco">Preço</a>
       </nav>
 
       <nav class="lemon-footer-group" aria-label="Ajuda">
@@ -799,6 +718,35 @@ main{padding-top:59px}
     var el = document.getElementById(id);
     if (el) el.innerHTML = storesHTML();
   });
+
+  /* ---------- hero: subtítulo com efeito de digitação ---------- */
+  (function(){
+    var box = document.getElementById('heroTyping');
+    if (!box) return;
+    var textEl = box.querySelector('.typing-text');
+    var PHRASES = Array.prototype.map.call(box.querySelectorAll('.typing-ghost'), function(g){ return g.textContent; });
+    var TYPE_MS = 35, ERASE_MS = 15, HOLD_MS = 3000, GAP_MS = 350;
+    // movimento reduzido: fica a primeira frase completa, sem animação
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var i = 0, n = 0;
+    function type(){
+      box.classList.add('is-typing');
+      var p = PHRASES[i];
+      n++; textEl.textContent = p.slice(0, n);
+      if (n < p.length) return setTimeout(type, TYPE_MS);
+      box.classList.remove('is-typing');
+      setTimeout(erase, HOLD_MS);
+    }
+    function erase(){
+      box.classList.add('is-typing');
+      n--; textEl.textContent = PHRASES[i].slice(0, n);
+      if (n > 0) return setTimeout(erase, ERASE_MS);
+      i = (i + 1) % PHRASES.length;
+      setTimeout(type, GAP_MS);
+    }
+    textEl.textContent = '';
+    setTimeout(type, 400);
+  })();
 
   /* ---------- hero demo: benefícios ligados às telas ---------- */
   (function(){
