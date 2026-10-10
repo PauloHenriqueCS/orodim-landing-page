@@ -198,18 +198,11 @@
     });
   }
 
-  function initNoticeAutoShow() {
-    if (isCapacitorApp()) return;
-    if (!hasAcknowledgedNotice()) {
-      window.setTimeout(PrivacyCookieBanner.show, 500);
-    }
-  }
-
   document.addEventListener("DOMContentLoaded", function () {
     markCurrentPage();
     injectYear();
     initHelpDropdown();
     initPrivacyNoticeTriggers();
-    initNoticeAutoShow();
+    /* aviso fixo desativado: só abre pelo link "Preferências de cookies" do rodapé */
   });
 })();

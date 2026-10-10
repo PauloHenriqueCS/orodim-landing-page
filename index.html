@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orodim — inglês com IA: escrita, pronúncia e conversação</title>
-<meta name="description" content="Pratique inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível — com progressão real do A1 ao C2.">
+<title>Orodim — pratique conversação, escrita e listening com IA</title>
+<meta name="description" content="Já tem inglês intermediário ou avançado? Pratique conversação por voz, escrita, pronúncia e listening com IA. Experimente o Orodim grátis.">
 <link rel="canonical" href="https://www.orodim.com.br/">
 <link rel="alternate" hreflang="pt-BR" href="https://www.orodim.com.br/">
 <link rel="alternate" hreflang="x-default" href="https://www.orodim.com.br/">
@@ -14,16 +14,16 @@
 <meta name="theme-color" content="#06090C">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Orodim">
-<meta property="og:title" content="Orodim — sua professora de inglês com IA">
-<meta property="og:description" content="Aprenda inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível e aos assuntos que você gosta — com progressão real do A1 ao C2.">
+<meta property="og:title" content="Orodim — pratique conversação, escrita e listening com IA">
+<meta property="og:description" content="Já tem inglês intermediário ou avançado? Pratique conversação por voz, escrita, pronúncia e listening com IA. Experimente o Orodim grátis.">
 <meta property="og:url" content="https://www.orodim.com.br/">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:image" content="https://www.orodim.com.br/assets/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Orodim — sua professora de inglês com IA">
-<meta name="twitter:description" content="Aprenda inglês com uma IA que adapta escrita, pronúncia, listening e conversação ao seu nível e aos assuntos que você gosta — com progressão real do A1 ao C2.">
+<meta name="twitter:title" content="Orodim — pratique conversação, escrita e listening com IA">
+<meta name="twitter:description" content="Já tem inglês intermediário ou avançado? Pratique conversação por voz, escrita, pronúncia e listening com IA. Experimente o Orodim grátis.">
 <meta name="twitter:image" content="https://www.orodim.com.br/assets/img/og.png">
 <script type="application/ld+json">
 {
@@ -58,7 +58,7 @@
       "applicationCategory": "EducationalApplication",
       "inLanguage": "pt-BR",
       "url": "https://www.orodim.com.br/",
-      "description": "Aplicativo de ensino de inglês com IA que adapta escrita, pronúncia, listening e conversação ao nível do aluno, com revisão dos erros e progressão do A1 ao C2.",
+      "description": "Aplicativo para praticar inglês com IA, para quem já tem nível intermediário ou avançado: conversação por voz com uma tutora de IA, escrita com correção, análise de pronúncia e listening.",
       "publisher": { "@id": "https://www.orodim.com.br/#organization" }
     }
   ]
@@ -228,6 +228,11 @@ main{padding-top:59px}
 .trial strong{font-size:1.05rem; font-weight:700; letter-spacing:-.01em; color:var(--green)}
 .trial-sub{font-size:.9rem; color:rgba(237,243,250,.8)}
 @media(min-width:640px){ .trial strong{font-size:1.15rem} }
+a.trial{cursor:pointer; transition:background .2s var(--ease),border-color .2s var(--ease)}
+a.trial:hover{background:rgba(63,185,138,.16); border-color:rgba(63,185,138,.7)}
+/* qualificação de nível junto aos CTAs */
+.fit{max-width:44ch; font-size:.92rem; line-height:1.5; color:rgba(237,243,250,.8)}
+.fit strong{font-weight:600; color:var(--bone)}
 
 /* store badges (coming soon) */
 .stores{display:flex; flex-wrap:wrap; gap:12px}
@@ -238,6 +243,17 @@ main{padding-top:59px}
 .store-txt small{font-size:.66rem; opacity:.7}
 .store-txt b{font-size:1rem; font-weight:700; letter-spacing:-.01em}
 .store-tag{position:absolute; top:-8px; right:8px; padding:1px 8px; border-radius:999px; font-family:var(--mono); font-size:.58rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; background:var(--green); color:var(--ink)}
+
+/* ---------- situations (identificação) ---------- */
+.situations-head h2{margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em}
+.situations-head p{margin:20px auto 0; max-width:56ch; font-size:1rem; line-height:1.6; color:var(--mist)}
+.situations-grid{max-width:1080px; margin:48px auto 0; display:grid; grid-template-columns:1fr; gap:1px; background:var(--line); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:left}
+@media(min-width:640px){ .situations-grid{grid-template-columns:repeat(2,1fr)} }
+@media(min-width:1024px){ .situations-grid{grid-template-columns:repeat(4,1fr)} }
+.situation{background:var(--bg); padding:24px 4px 28px}
+@media(min-width:640px){ .situation{padding:28px 24px 32px} }
+.situation .note-title{display:block; margin-top:14px; font-size:.98rem; font-weight:600; line-height:1.35; letter-spacing:-.01em; color:var(--bone)}
+.situation .note-text{display:block; margin-top:8px; font-size:.9rem; line-height:1.7; color:rgba(237,243,250,.8)}
 
 /* ---------- stage / viewer ---------- */
 .stage-head{text-align:center}
@@ -335,6 +351,7 @@ main{padding-top:59px}
 .cta h2{margin:20px auto 0; max-width:18ch; font-size:clamp(2rem,4.4vw,3.4rem); font-weight:600; line-height:1.04; letter-spacing:-.035em}
 .cta-copy{margin:20px auto 0; max-width:44ch; font-size:1rem; line-height:1.6; color:var(--mist)}
 .cta-actions{margin-top:32px; display:flex; flex-direction:column; align-items:center; gap:20px}
+#storesCta{scroll-margin:140px 0}
 .cta-store-box{width:100%; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:24px 0}
 .cta-store-note{margin-top:16px; font-size:.86rem; color:var(--mist)}
 .cta-phone{margin:0 auto; max-width:200px}
@@ -473,22 +490,23 @@ main{padding-top:59px}
   <!-- HERO -->
   <section class="section hero">
     <div class="section-inner">
-      <span class="mono mono--green reveal">Orodim · inglês com IA</span>
-      <h1 class="reveal" style="--reveal-d:.08s">Na hora de falar inglês, as palavras somem?</h1>
+      <span class="mono mono--green reveal">Orodim · prática para inglês intermediário e avançado</span>
+      <h1 class="reveal" style="--reveal-d:.08s">Você entende inglês. Mas trava na hora de falar?</h1>
       <p class="hero-lead hero-typing reveal" style="--reveal-d:.16s" id="heroTyping">
-        <span class="visually-hidden">Converse em inglês com uma IA, sem medo de errar. Descubra quais palavras você precisa praticar na pronúncia. Entenda os erros da sua escrita e como corrigir. Treine seu ouvido com histórias no seu nível. Transforme seus próprios erros em novas práticas.</span>
-        <span class="typing-stage" aria-hidden="true"><span class="typing-ghost">Converse em inglês com uma IA, sem medo de errar.<span class="typing-cursor"></span></span><span class="typing-ghost">Descubra quais palavras você precisa praticar na pronúncia.<span class="typing-cursor"></span></span><span class="typing-ghost">Entenda os erros da sua escrita e como corrigir.<span class="typing-cursor"></span></span><span class="typing-ghost">Treine seu ouvido com histórias no seu nível.<span class="typing-cursor"></span></span><span class="typing-ghost">Transforme seus próprios erros em novas práticas.<span class="typing-cursor"></span></span><span class="typing-live"><span class="typing-text">Converse em inglês com uma IA, sem medo de errar.</span><span class="typing-cursor"></span></span></span>
+        <span class="visually-hidden">Pratique responder em inglês sem a pressão de uma reunião. Converse por voz com uma tutora de IA, no seu ritmo. Escreva em inglês e entenda o que precisa corrigir. Treine seu ouvido para acompanhar o inglês falado. Veja quais palavras precisam de atenção na sua pronúncia.</span>
+        <span class="typing-stage" aria-hidden="true"><span class="typing-ghost">Pratique responder em inglês sem a pressão de uma reunião.<span class="typing-cursor"></span></span><span class="typing-ghost">Converse por voz com uma tutora de IA, no seu ritmo.<span class="typing-cursor"></span></span><span class="typing-ghost">Escreva em inglês e entenda o que precisa corrigir.<span class="typing-cursor"></span></span><span class="typing-ghost">Treine seu ouvido para acompanhar o inglês falado.<span class="typing-cursor"></span></span><span class="typing-ghost">Veja quais palavras precisam de atenção na sua pronúncia.<span class="typing-cursor"></span></span><span class="typing-live"><span class="typing-text">Pratique responder em inglês sem a pressão de uma reunião.</span><span class="typing-cursor"></span></span></span>
       </p>
 
       <div class="hero-actions reveal" style="--reveal-d:.2s">
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Experimente grátis</strong></span></p>
+        <p class="fit"><strong>Para inglês intermediário e avançado.</strong> Não é para iniciantes.</p>
+        <a class="trial" href="#download" data-trial="storesHero"><span class="trial-strong"><span class="dot"></span><strong>Experimente grátis</strong></span><span class="trial-sub">Sem cartão de crédito.</span></a>
         <div class="stores center" id="storesHero"></div>
       </div>
 
       <div class="flank flank--hero" id="heroDemo">
         <div class="col-left reveal reveal--left" style="--reveal-d:.24s">
-          <button type="button" class="note note--left hero-benefit is-active" data-i="0" aria-pressed="true" aria-controls="heroShots"><span class="note-num-m">01</span><span class="note-body"><span class="note-num-d">01</span><span class="note-title">Saiba onde melhorar sua pronúncia</span><span class="note-text">Descubra quais palavras precisam de mais atenção.</span></span><span class="note-line"></span></button>
-          <button type="button" class="note note--left hero-benefit" data-i="1" aria-pressed="false" aria-controls="heroShots"><span class="note-num-m">02</span><span class="note-body"><span class="note-num-d">02</span><span class="note-title">Mais prática para conversar</span><span class="note-text">Treine conversas por voz com uma tutora de IA.</span></span><span class="note-line"></span></button>
+          <button type="button" class="note note--left hero-benefit is-active" data-i="0" aria-pressed="true" aria-controls="heroShots"><span class="note-num-m">01</span><span class="note-body"><span class="note-num-d">01</span><span class="note-title">Saiba quais palavras precisam de prática.</span><span class="note-text">Grave sua leitura e veja a análise da pronúncia, palavra por palavra.</span></span><span class="note-line"></span></button>
+          <button type="button" class="note note--left hero-benefit" data-i="1" aria-pressed="false" aria-controls="heroShots"><span class="note-num-m">02</span><span class="note-body"><span class="note-num-d">02</span><span class="note-title">Pratique antes da próxima call.</span><span class="note-text">Converse por voz com uma tutora de IA, com velocidade ajustável e legendas.</span></span><span class="note-line"></span></button>
         </div>
         <div class="col-phone reveal reveal--scale" style="--reveal-d:.12s">
           <figure class="phone">
@@ -502,9 +520,24 @@ main{padding-top:59px}
           </figure>
         </div>
         <div class="col-right reveal reveal--right" style="--reveal-d:.24s">
-          <button type="button" class="note note--right hero-benefit" data-i="2" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">03</span><span class="note-body"><span class="note-num-d">03</span><span class="note-title">Entenda melhor o inglês que você ouve</span><span class="note-text">Ouça histórias no seu nível e teste o que entendeu, com transcrição e tradução quando precisar.</span></span></button>
-          <button type="button" class="note note--right hero-benefit" data-i="3" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">04</span><span class="note-body"><span class="note-num-d">04</span><span class="note-title">Entenda os erros da sua escrita</span><span class="note-text">Veja as correções e as explicações para melhorar seu texto.</span></span></button>
+          <button type="button" class="note note--right hero-benefit" data-i="2" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">03</span><span class="note-body"><span class="note-num-d">03</span><span class="note-title">Entenda o que ouviu.</span><span class="note-text">Ouça histórias no seu nível, consulte a transcrição e teste sua compreensão.</span></span></button>
+          <button type="button" class="note note--right hero-benefit" data-i="3" aria-pressed="false" aria-controls="heroShots"><span class="note-line"></span><span class="note-num-m">04</span><span class="note-body"><span class="note-num-d">04</span><span class="note-title">Escreva e entenda as correções.</span><span class="note-text">Compare seu texto com a versão corrigida e veja a explicação dos ajustes.</span></span></button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITUATIONS -->
+  <section class="section" id="situacoes">
+    <div class="section-inner center situations-head">
+      <span class="mono mono--green reveal">Inglês na sua rotina de trabalho</span>
+      <h2 class="reveal" style="--reveal-d:.08s">A reunião é em inglês. Você consegue participar?</h2>
+      <p class="reveal" style="--reveal-d:.16s">Acompanhar o assunto, responder, explicar sua ideia e continuar por mensagem. O inglês precisa funcionar em cada parte dessa conversa.</p>
+      <div class="situations-grid reveal" style="--reveal-d:.2s">
+        <div class="situation"><span class="mono mono--green">01 · Acompanhar</span><span class="note-title">Na reunião em inglês, você perde partes da conversa?</span><span class="note-text">Você acompanha o assunto, mas deixa passar detalhes e termina a reunião em dúvida sobre o que foi combinado.</span></div>
+        <div class="situation"><span class="mono mono--green">02 · Responder</span><span class="note-title">Encontrar as palavras sem ficar em silêncio.</span><span class="note-text">A pergunta veio para você. A resposta está na cabeça, mas organizar a frase em inglês demora.</span></div>
+        <div class="situation"><span class="mono mono--green">03 · Explicar</span><span class="note-title">Fazer sua ideia ser entendida.</span><span class="note-text">Apresentar uma solução, explicar um problema técnico ou dar sua opinião. Você precisa formular a ideia e falar com clareza.</span></div>
+        <div class="situation"><span class="mono mono--green">04 · Escrever</span><span class="note-title">Continuar a conversa por mensagem.</span><span class="note-text">Depois da reunião, é hora de escrever. Você quer organizar as frases sem depender do tradutor para cada resposta.</span></div>
       </div>
     </div>
   </section>
@@ -513,8 +546,8 @@ main{padding-top:59px}
   <section class="section" id="recursos">
     <div class="section-inner" style="max-width:1180px">
       <div class="stage-head reveal">
-        <h2>Veja como o Orodim ajuda você a melhorar</h2>
-        <p>Da conversa por voz à correção dos seus textos: explore o que você pode praticar.</p>
+        <h2>Pratique falar, escrever e entender inglês.</h2>
+        <p>Conversa por voz, escrita com correção, análise de pronúncia e listening. Veja como funciona cada prática.</p>
       </div>
       <div class="tabs reveal" style="--reveal-d:.1s" id="tabs" role="tablist" aria-label="Práticas do Orodim"></div>
       <button type="button" class="tabs-toggle" id="tabsToggle" aria-controls="tabs" hidden></button>
@@ -525,14 +558,14 @@ main{padding-top:59px}
   <!-- ROUTINE -->
   <section class="section" id="rotina">
     <div class="section-inner center">
-      <span class="mono mono--green reveal">Consistência</span>
-      <h2 class="reveal" style="--reveal-d:.08s; margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em">Fica mais fácil continuar quando você vê seu progresso</h2>
-      <p class="reveal" style="--reveal-d:.16s; margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)">Acompanhe os dias em que praticou e retome de onde parou.</p>
+      <span class="mono mono--green reveal">Rotina de prática</span>
+      <h2 class="reveal" style="--reveal-d:.08s; margin:24px auto 0; max-width:24ch; font-size:clamp(1.5rem,3vw,2.3rem); font-weight:600; line-height:1.15; letter-spacing:-.03em">Veja o que praticou. Retome no dia seguinte.</h2>
+      <p class="reveal" style="--reveal-d:.16s; margin:20px auto 0; max-width:52ch; font-size:1rem; line-height:1.6; color:var(--mist)">Consulte suas atividades, acompanhe os dias praticados e mantenha seu histórico em um só lugar.</p>
 
       <div class="flank flank--routine" style="margin-top:48px">
         <div class="col-left reveal reveal--left">
           <div class="note note--left"><span class="note-num-m">01</span><div class="note-body"><span class="note-num-d">01</span><p>Confira as práticas concluídas no dia.</p></div><span class="note-line"></span></div>
-          <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p>Dias completos ficam destacados no calendário.</p></div><span class="note-line"></span></div>
+          <div class="note note--left"><span class="note-num-m">02</span><div class="note-body"><span class="note-num-d">02</span><p>Veja os dias completos no calendário.</p></div><span class="note-line"></span></div>
         </div>
         <div class="col-phone reveal reveal--scale">
           <figure class="phone">
@@ -544,7 +577,7 @@ main{padding-top:59px}
         </div>
         <div class="col-right reveal reveal--right">
           <div class="note note--right"><span class="note-line"></span><span class="note-num-m">03</span><div class="note-body"><span class="note-num-d">03</span><p>Consulte seu histórico de atividades.</p></div></div>
-          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p>Continue de onde parou no dia seguinte.</p></div></div>
+          <div class="note note--right"><span class="note-line"></span><span class="note-num-m">04</span><div class="note-body"><span class="note-num-d">04</span><p>Retome a prática no dia seguinte.</p></div></div>
         </div>
       </div>
     </div>
@@ -553,9 +586,9 @@ main{padding-top:59px}
   <!-- LEVELS -->
   <section class="section" id="niveis">
     <div class="section-inner levels">
-      <span class="mono mono--green reveal">Progressão</span>
-      <h2 class="reveal" style="--reveal-d:.08s">Pratique a partir do que você já sabe</h2>
-      <p class="levels-lead reveal" style="--reveal-d:.12s">Começando agora ou buscando mais precisão? Encontre atividades adequadas ao seu nível.</p>
+      <span class="mono mono--green reveal">Prática no seu nível</span>
+      <h2 class="reveal" style="--reveal-d:.08s">Você já estudou inglês. Agora precisa praticar.</h2>
+      <p class="levels-lead reveal" style="--reveal-d:.12s; max-width:62ch">Esta proposta é para quem tem inglês intermediário ou avançado e quer praticar conversação, escrita, pronúncia e compreensão oral. Não é para iniciantes.</p>
       <div class="path reveal" style="--reveal-d:.16s" id="path">
         <div class="path-track"><span class="path-fill"></span></div>
         <div class="levels-grid">
@@ -563,11 +596,11 @@ main{padding-top:59px}
           <div class="level"><span class="level-tick"></span><p class="level-code">A2</p><span class="mono level-label">Básico</span><p class="level-note">Rotina, planos e histórias simples.</p></div>
           <div class="level"><span class="level-tick"></span><p class="level-code">B1</p><span class="mono level-label">Intermediário</span><p class="level-note">Opinião, explicação e conversas mais longas.</p></div>
           <div class="level"><span class="level-tick"></span><p class="level-code">B2</p><span class="mono level-label">Independente</span><p class="level-note">Argumentação e leitura mais densa.</p></div>
-          <div class="level"><span class="level-tick"></span><p class="level-code">C1</p><span class="mono level-label">Avançado</span><p class="level-note">Fluência com naturalidade e precisão.</p></div>
-          <div class="level"><span class="level-tick"></span><p class="level-code">C2</p><span class="mono level-label">Proficiência</span><p class="level-note">Domínio em qualquer contexto.</p></div>
+          <div class="level"><span class="level-tick"></span><p class="level-code">C1</p><span class="mono level-label">Avançado</span><p class="level-note">Precisão e naturalidade em temas complexos.</p></div>
+          <div class="level"><span class="level-tick"></span><p class="level-code">C2</p><span class="mono level-label">Proficiência</span><p class="level-note">Nuances e textos mais sofisticados.</p></div>
         </div>
       </div>
-      <p class="levels-note reveal">Seu nível acompanha sua progressão no currículo. Você avança conforme evolui — sem perder o progresso que já conquistou.</p>
+      <p class="levels-note reveal">Pratique a partir do seu nível atual e acompanhe suas atividades e avaliações ao longo do tempo.</p>
     </div>
   </section>
 
@@ -575,11 +608,12 @@ main{padding-top:59px}
   <section class="section cta" id="download">
     <div class="section-inner cta-grid">
       <div class="cta-text">
-      <span class="mono mono--green reveal">Comece agora</span>
-      <h2 class="reveal" style="--reveal-d:.08s">Sua primeira conversa em inglês pode começar hoje.</h2>
-      <p class="cta-copy reveal" style="--reveal-d:.16s">Baixe o Orodim e pratique por voz com uma tutora de IA, no seu nível.</p>
+      <span class="mono mono--green reveal">Comece a praticar</span>
+      <h2 class="reveal" style="--reveal-d:.08s">Abra o microfone. Comece a praticar.</h2>
+      <p class="cta-copy reveal" style="--reveal-d:.16s">Converse por voz com uma tutora de IA e pratique também escrita, pronúncia e listening no Orodim.</p>
       <div class="cta-actions reveal" style="--reveal-d:.24s">
-        <p class="trial"><span class="trial-strong"><span class="dot"></span><strong>Experimente grátis</strong></span></p>
+        <p class="fit"><strong>Para inglês intermediário e avançado.</strong> Não é para iniciantes.</p>
+        <a class="trial" href="#storesCta" data-trial="storesCta"><span class="trial-strong"><span class="dot"></span><strong>Experimente grátis</strong></span><span class="trial-sub">Sem cartão de crédito.</span></a>
         <div class="cta-store-box">
           <span class="mono" style="display:block">Escolha a sua loja</span>
           <div class="stores center" id="storesCta" style="margin-top:20px"></div>
@@ -604,38 +638,38 @@ main{padding-top:59px}
       <div class="faq-list reveal" style="--reveal-d:.08s">
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1"><span>O que posso praticar no Orodim?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Você pode praticar escrita, pronúncia, compreensão de áudio e conversação por voz com uma tutora de IA. Também pode revisar seus próprios erros e acompanhar sua evolução.</p></div>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>Você pode praticar conversação por voz com uma tutora de IA, escrita, pronúncia e listening. Também pode revisar pontos identificados na sua escrita e acompanhar suas avaliações e atividades.</p></div>
         </div>
         <div class="faq-item">
-          <h3><button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span>O Orodim serve para quem está começando?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Sim. O Orodim oferece atividades do A1 ao C2, com práticas adequadas a diferentes níveis de inglês, do iniciante ao avançado.</p></div>
+          <h3><button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span>Para quem é esta proposta de prática?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Para quem já tem inglês intermediário ou avançado e quer praticar o que conhece. Não é para iniciantes.</p></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"><span>Como funciona a análise da minha pronúncia?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Você grava sua voz e recebe uma análise palavra por palavra, mostrando quais foram bem pronunciadas e quais precisam de mais atenção. Depois, pode ouvir o modelo e praticar novamente.</p></div>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Você grava uma leitura e recebe uma análise palavra por palavra. Depois, pode ouvir o modelo e praticar novamente os pontos que precisam de atenção.</p></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q4" aria-expanded="false" aria-controls="faq-a4"><span>Posso conversar por voz com a IA?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>Sim. Você pode conversar por voz em tempo real com uma tutora de IA, escolhendo entre conversa guiada ou livre. Os minutos disponíveis dependem do seu plano.</p></div>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>Sim. Você conversa por voz em tempo real com uma tutora de IA. Pode escolher entre conversa guiada ou livre, ajustar a velocidade e usar legendas. A disponibilidade de minutos depende do seu acesso no aplicativo.</p></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5"><span>Como funciona a revisão dos meus erros?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Pontos identificados nas suas atividades de escrita podem voltar em exercícios de revisão. Assim, você pratica novamente aquilo em que teve dificuldade e recebe feedback sobre sua resposta.</p></div>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Pontos identificados nas suas atividades de escrita podem voltar em exercícios de revisão. Você tenta novamente e recebe feedback sobre sua resposta.</p></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6"><span>Como funciona o teste grátis?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>O teste grátis dura 7 dias, no iPhone e no Android, e começa automaticamente quando você cria sua conta. Para começar, não é preciso assinar um plano nem informar forma de pagamento. Durante o teste, você pode fazer uma prática de escrita, uma de pronúncia e uma de listening por dia, e tem 15 minutos de conversação por voz no total. O teste não vira uma assinatura sozinho: quando ele termina, para continuar praticando é preciso assinar um plano pelo aplicativo. Seus dados e seu progresso são mantidos.</p></div>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden><p>Você cria sua conta pelo aplicativo e pode experimentar as práticas sem cadastrar cartão de crédito. Consulte as condições do teste no app. O teste não vira uma assinatura automaticamente, e seu progresso fica salvo.</p></div>
         </div>
         <div class="faq-item">
-          <h3><button type="button" class="faq-q" id="faq-q7" aria-expanded="false" aria-controls="faq-a7"><span>Quanto custa o Orodim?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden><p>Você começa com o teste grátis de 7 dias. Para continuar praticando depois dele, é preciso assinar um plano mensal pelo aplicativo, onde você vê os planos disponíveis, o que cada um inclui e os valores antes de contratar.</p></div>
+          <h3><button type="button" class="faq-q" id="faq-q7" aria-expanded="false" aria-controls="faq-a7"><span>Preciso assinar para continuar depois do teste?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden><p>Sim. Para continuar após o teste, você escolhe um plano pelo aplicativo. As condições são apresentadas antes da contratação.</p></div>
         </div>
         <div class="faq-item">
-          <h3><button type="button" class="faq-q" id="faq-q8" aria-expanded="false" aria-controls="faq-a8"><span>Posso cancelar quando quiser?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
-          <div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8" hidden><p>Sim. Os planos são mensais e você pode cancelar a renovação pelo gerenciamento de assinaturas da loja em que contratou.</p></div>
+          <h3><button type="button" class="faq-q" id="faq-q8" aria-expanded="false" aria-controls="faq-a8"><span>Posso cancelar a renovação?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8" hidden><p>Sim. Você pode cancelar pelo gerenciamento de assinaturas da loja em que contratou.</p></div>
         </div>
         <div class="faq-item">
-          <h3><button type="button" class="faq-q" id="faq-q9" aria-expanded="false" aria-controls="faq-a9"><span>Preciso estar conectado à internet?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+          <h3><button type="button" class="faq-q" id="faq-q9" aria-expanded="false" aria-controls="faq-a9"><span>Preciso de internet?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
           <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9" hidden><p>Sim. As análises e a conversação com IA precisam de conexão com a internet.</p></div>
         </div>
       </div>
@@ -717,6 +751,21 @@ main{padding-top:59px}
   ['storesHero','storesCta'].forEach(function(id){
     var el = document.getElementById(id);
     if (el) el.innerHTML = storesHTML();
+  });
+
+  /* "Experimente grátis": no celular, aciona o botão da loja da plataforma no mesmo bloco
+     (mesmo href/OneLink do AppsFlyer e mesma conversão do gtag); no desktop, segue a âncora para as lojas. */
+  Array.prototype.forEach.call(document.querySelectorAll('a.trial[data-trial]'), function(t){
+    t.addEventListener('click', function(e){
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      var store = isIOS ? 'ios' : (/Android/.test(ua) ? 'android' : null);
+      var box = document.getElementById(t.getAttribute('data-trial'));
+      var a = store && box ? box.querySelector('a.store[data-store="'+store+'"]') : null;
+      if (!a) return;
+      e.preventDefault();
+      a.click();
+    });
   });
 
   /* ---------- hero: subtítulo com efeito de digitação ---------- */
@@ -829,29 +878,29 @@ main{padding-top:59px}
 
   /* ---------- interactive practice viewer ---------- */
   var SCENES = [
-    { tab:'Pronúncia', headline:'Veja, palavra por palavra, onde melhorar sua pronúncia.',
-      copy:'Grave sua voz e descubra quais palavras você pronunciou bem e quais precisam de mais prática. Ouça o modelo e tente novamente.',
-      notes:['Análise palavra por palavra.','Identifique as palavras que precisam de mais prática.','Ouça o modelo e tente novamente.','Repita as palavras que precisam de mais atenção.'],
+    { tab:'Pronúncia', headline:'Sua pronúncia, palavra por palavra.',
+      copy:'Grave sua leitura e veja quais palavras foram bem pronunciadas e quais precisam de atenção. Ouça o modelo e tente novamente sabendo o que praticar.',
+      notes:['Grave sua leitura em inglês.','Veja a análise palavra por palavra.','Ouça o modelo de pronúncia.','Pratique novamente os pontos que precisam de atenção.'],
       shots:[{src:'/assets/img/leitura-palavra-por-palavra.webp', w:540, h:1180, alt:'Leitura analisada palavra por palavra'},{src:'/assets/img/resultado-pronuncia.webp', w:500, h:1121, alt:'Resultado da pronúncia com as palavras para praticar'}] },
-    { tab:'Conversação', headline:'Converse em inglês de verdade',
-      copy:'Pratique por voz com uma tutora de IA em tempo real. Escolha entre conversa guiada ou livre e personalize a experiência do tutor.',
-      notes:['Converse por voz em tempo real.','Use legendas quando quiser.','Personalize voz e estilo do tutor.','Escolha como quer conduzir a conversa.'],
+    { tab:'Conversação', headline:'Fale em inglês sem esperar a próxima call.',
+      copy:'Converse por voz com uma tutora de IA em tempo real e pratique formular suas respostas. Ajuste a velocidade, use legendas e escolha entre conversa guiada ou livre.',
+      notes:['Converse por voz em tempo real.','Ajuste a velocidade para acompanhar.','Use legendas quando precisar.','Escolha o modo de conversa, a voz e o estilo da tutora.'],
       shots:[{src:'/assets/img/hero-conversa-voz.webp', w:480, h:1015, alt:'Conversa por voz com a tutora de IA'}] },
-    { tab:'Escrita', headline:'Uma missão para colocar seu inglês em prática',
-      copy:'Escreva em inglês a partir de uma proposta adequada ao seu nível e receba uma análise detalhada da sua resposta, com nota geral, desempenho por habilidade, explicações e uma versão corrigida para comparar.',
-      notes:['Missão alinhada ao seu nível atual.','Orientação clara para começar a escrever.','Escreva livremente em inglês.','Envie quando quiser receber a análise da IA.','Avaliação de gramática, vocabulário, naturalidade e fluência.','Compare seu texto com a versão corrigida.','Entenda os pontos que merecem mais atenção.','Erros importantes podem voltar em Revisar meus erros.'],
+    { tab:'Escrita', headline:'Escreva em inglês. Veja o que corrigir e por quê.',
+      copy:'Responda a uma proposta adequada ao seu nível e receba uma análise de gramática, vocabulário, naturalidade e fluência. Compare seu texto com uma versão corrigida e entenda os ajustes.',
+      notes:['Receba uma proposta adequada ao seu nível.','Entenda o que a atividade pede.','Escreva sua resposta em inglês.','Envie para receber a análise.','Veja a avaliação por habilidade.','Compare seu texto com a versão corrigida.','Leia as explicações das correções.','Revise depois os pontos identificados na escrita.'],
       shots:[{src:'/assets/img/seu-texto-ingles.webp', w:500, h:1113, alt:'Tela de escrita em inglês no Orodim'},{src:'/assets/img/hero-relatorio-professor.webp', w:500, h:1105, alt:'Análise da escrita com nota geral e desempenho por habilidade'}] },
-    { tab:'Listening', headline:'Treine seu ouvido sem ficar perdido',
-      copy:'Ouça histórias adequadas ao seu nível, acompanhe a transcrição quando precisar e teste o que entendeu.',
-      notes:['Histórias em inglês adequadas ao seu nível.','Controle a velocidade do áudio.','Consulte transcrição e tradução quando precisar.','Responda perguntas para testar sua compreensão.'],
+    { tab:'Listening', headline:'Ouça de novo. Confira o que você entendeu.',
+      copy:'Ouça histórias no seu nível e responda perguntas sobre o conteúdo. Ajuste a velocidade e consulte a transcrição ou tradução quando precisar.',
+      notes:['Ouça histórias adequadas ao seu nível.','Ajuste a velocidade do áudio.','Consulte a transcrição e a tradução.','Responda perguntas para verificar sua compreensão.'],
       shots:[{src:'/assets/img/listening-historia.webp', w:556, h:1222, alt:'Tela da história de listening com nível, partes e duração'},{src:'/assets/img/hero-listening.webp', w:540, h:1170, alt:'Player de listening com controle de velocidade, reouvir com legenda e texto da história'}] },
-    { tab:'Revisar meus erros', headline:'Seus erros não terminam na correção',
-      copy:'O que merece mais atenção volta em atividades de revisão para você tentar novamente até dominar.',
-      notes:['Veja o erro que você realmente cometeu.','Tente escrever a forma correta.','Receba feedback logo após responder.','Continue revisando os pontos que ainda precisam de prática.'],
+    { tab:'Revisar meus erros', headline:'Errou na escrita? Tente novamente.',
+      copy:'Pontos identificados nas suas atividades de escrita podem voltar em exercícios de revisão. Tente corrigir a frase e receba feedback sobre sua resposta.',
+      notes:['Veja o trecho que você escreveu.','Tente corrigir o erro.','Receba feedback sobre sua resposta.','Continue praticando os pontos que precisam de atenção.'],
       shots:[{src:'/assets/img/revisao.webp', w:550, h:1212, alt:'Atividade Revisar meus erros mostrando o que você escreveu e o campo para escrever a forma correta'}] },
-    { tab:'Evolução', headline:'Você vê o progresso acontecendo',
-      copy:'Acompanhe seu desempenho ao longo do tempo, compare habilidades e veja como sua escrita está evoluindo.',
-      notes:['Gramática, vocabulário, naturalidade e fluência separadamente.','Compare diferentes períodos.','Acompanhe notas e avaliações ao longo do tempo.','Veja sua evolução sempre que quiser.'],
+    { tab:'Evolução', headline:'Compare suas avaliações de escrita.',
+      copy:'Acompanhe suas notas de gramática, vocabulário, naturalidade e fluência ao longo do tempo. Compare períodos e veja quais pontos continuam precisando de prática.',
+      notes:['Consulte seu desempenho por habilidade.','Compare diferentes períodos.','Veja suas notas e avaliações anteriores.','Identifique os pontos que merecem atenção.'],
       shots:[{src:'/assets/img/evolucao-tela.webp', w:480, h:1040, alt:'Tela de evolução com desempenho por habilidade'}] }
 
   ];
